@@ -1,0 +1,58 @@
+
+
+
+:root{
+    --vert: #32c788;
+    --greybg:#f7f7f7;
+    --blue: #092c3f;
+    --color-text: #57667e;
+    --text:#bcc1c9;
+}  
+
+
+.bannerexpert{
+    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2),rgba(0,0,0,0.1)),url("../imagepub/bg6.jpg") ;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top:0.1rem;
+    font-weight: 500;
+    min-height: 500px;
+  
+   }
+
+   .max-height{
+    margin-top:7rem;
+    color:black;
+ 
+  }
+
+   .searchInput{
+
+    border-bottom-left-radius: 1.6rem;
+    padding:1rem;
+   }
+
+
+
+   .btn-select{
+    border-top-right-radius: 1.6rem;
+    background-color: var(--vert);
+    color:var(--blue);
+    font-weight:600;
+    width:auto;
+
+   }
+
+   .expert{
+    padding: 3rem 2rem ;
+    background-color: rgba(18, 17, 20, 0.2);
+    border-radius: 1.6rem;
+   
+   }
+
+
+h1{
+color:var(--greybg);
+}
+ 
