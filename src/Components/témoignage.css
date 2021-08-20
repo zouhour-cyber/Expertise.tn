@@ -24,7 +24,6 @@
   }
 
   .testimonial_para{
-    margin-bottom:3rem;
     color:var(--greybg);
 
   }
@@ -37,7 +36,7 @@
   .tem-img{
       width:100px;
       height:100px;
-     padding:0.2rem  }
+      }
 
 
 

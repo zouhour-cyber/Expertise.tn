@@ -4,13 +4,16 @@ import './Home.css'
 import { Container, Row, Col, Button , Card} from 'react-bootstrap'
 import Footer from '../Components/Footer'
 import Témoignage from '../Components/TémoignageSlider'
+import { useDispatch, useSelector } from 'react-redux'
+import { signout } from '../Redux/Actions/authAction'
+import Partenaires from '../Components/partenaires'
 
+const Home = (props)=> {
 
-
-const Home = ()=> {
   return(
     <div>
-  <NavbarComponent/>
+  <NavbarComponent/>  
+  
 
   <Container className="banner" fluid>
       <Row className="d-flex  mx-auto">
@@ -29,7 +32,9 @@ const Home = ()=> {
   </Row>
   </Container>
 
-  <Container  className="section-padding" fluid>
+  <div className="section-padding"> </div>
+
+  <Container   fluid>
   <div className="subtitle"> Nos Domaines d'espertise</div>
 <Row className="d-flex justify-content-between mt-5 mx-auto">
 <Col md={4}> 
@@ -79,16 +84,18 @@ const Home = ()=> {
 
   </Container>
 
-  <Container  className="section-padding"  fluid>
+  <div className="section-padding"> </div>
 
-<Row className="d-flex ">
+  <Container   fluid>
+
+<Row className="d-flex bg-white">
 
 <Col md={5} className=''>
   
-  <img  src="image/about2.jpg"  className="image-fluid" style={{ height:"30rem"}}/>
+  <img  src="image/home-left.png"  className="image-fluid img-about" style={{ height:"35rem"}}/>
 
   </Col>
-<Col md={6}  className='mt-5'  >
+<Col md={6}  className='mt-5 '  >
 <div className="Apropos">Expertise.tn , les leader du vivant  </div>
 <div className="Apropos-text"> Parce que l'agriculture est en perpétuelle mutation, soumise à des réglementations et des techniques de plus en plus sophistiquées, les exploitants agricoles doivent aujourd’hui faire face à des problématiques complexes.</div>
 <Button variant="success"> Demander un rendez-vous !! </Button>
@@ -99,21 +106,24 @@ const Home = ()=> {
 
 
 
-<Container  className=" section-padding bg-vert border" fluid> 
+<Container  className=" bg-vert d-flex align-items-center justify-content-center" fluid> 
 <Row> 
 
-  <Col md={8}  className="Apropos" > Vous êtes expert agronome certifié et confirmé?</Col>
-  <Col md={4}>  <Button className="px-5 btn-blue" variant="dark">  Rejoignez-nous  </Button>
+  <Col md={8} xs={12}  className="Apropos" > Vous êtes expert agronome certifié et confirmé?</Col>
+  <Col md={4} xs={12}>   <Button className="px-5 btn-blue" variant="dark">  Rejoignez-nous  </Button>
 </Col>
 </Row>
 
 
 </Container>
 
-<Container  className="section-padding"  fluid>
 <Témoignage/>
+<div className="section-padding"> </div>
 
-</Container>
+<Partenaires/>
+
+<div className="section-padding"> </div>
+
 <Footer/>
 
     </div>

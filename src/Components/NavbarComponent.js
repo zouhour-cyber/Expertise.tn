@@ -1,6 +1,7 @@
 import React from 'react'
 import {Nav, Navbar, Container, Button} from 'react-bootstrap'
 import {Link} from 'react-router-dom';
+// import ModalInscri from './modalinscription';
 
 
 
@@ -18,7 +19,8 @@ const NavbarComponent = () => {
       <Link  to="/Expert" className="navlink">Nos experts </Link>
       <Link to="/Actualités" className="navlink">Actualités </Link>
     </Nav>
-    <Button className="btn btn-success btn-sm"> <Link>Inscription</Link>  </Button>
+    <Button  className="btn btn-success btn-sm" > <Link  to="/register">  Inscription  </Link>  </Button>
+
 
   
   </Navbar.Collapse>

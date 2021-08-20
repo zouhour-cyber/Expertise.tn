@@ -23,3 +23,11 @@ function addNewPUB(titre,description,image) {
 export const deleteItems=(id)=> {
 Axios.delete(`${SERVER_BASE_API}/PUB/deletePUB/${id}`).then(res=>res.data).then(res=> window.location.reload());
 }
+
+
+
+export const fetchLogin = (user) =>{
+  Axios
+    .post(`${SERVER_BASE_API}/user/signin`,{...user})
+}
+
