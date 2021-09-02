@@ -28,6 +28,10 @@ Axios.delete(`${SERVER_BASE_API}/PUB/deletePUB/${id}`).then(res=>res.data).then(
 
 export const fetchLogin = (user) =>{
   Axios
-    .post(`${SERVER_BASE_API}/user/signin`,{...user})
+    .post(`http://localhost:4000/user/signin`,{...user})
 }
 
+
+export const fetchExpert=(user ) => {
+  Axios.get('http://localhost:4000/expert/getEXPERT')
+}

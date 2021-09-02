@@ -1,13 +1,60 @@
+:root{
+    --vert: #32c788;
+    --greybg:#f7f7f7;
+    --blue: #092c3f;
+    --color-text: #57667e;
+    --text:#bcc1c9;
+  }
 .bannerpub{
-    background-image:linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2),rgba(0,0,0,0.1)), url("../imagepub/bg3.jpg") ;
+    background-image:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.4), rgba(0,0,0,0.4),rgba(0,0,0,0.1)), url("../imagepub/bgblog.jpg") ;
     background-position: center;
     background-repeat: no-repeat;
+    background-attachment: fixed;
+
     background-size: cover;
     padding-top:0.8rem;
     font-weight: 500;
-    position:relative;
-    min-height: 70vh;
+    min-height: 90vh;
   
    }
-
+   .text-banner-actualité{
+    /* letter-spacing: .04em; */
+    font-size: 3rem;
+    font-weight:600;
+    color:var(--text);
+    text-align: left;
+    font-family: 'Bebas Neue', cursive;
+    margin-top:5rem;
+    
+  }
    
+   .RecentPost , .RecentPost h6{
+       text-align: left;
+       color: var(--blue);
+    }
+
+
+    .box{
+        height:5rem;
+        width:5rem;
+        background-color: var(--vert);
+        border-radius: 1rem;
+    }
+
+
+    .title{
+        font-family: 'cursive';  
+        color:var(--blue);
+    }
+    /* .date{
+        background-color: var(--vert);
+        width:10rem;
+        height:2rem;
+        border-radius: 0.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom:1rem;
+        font-size: 20px;
+    
+    } */

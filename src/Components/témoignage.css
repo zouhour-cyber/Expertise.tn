@@ -13,32 +13,61 @@
 *{
     font-family: 'Poppins', sans-serif;
  }
- .testimonial_subtitle{
+ .card-tem.testimonial_subtitle{
      color: var(--text);
      font-size: 12px;
  }
    .testimonial_fa{
     background-color:transparent! important;
      color:var(--vert) ! important;
-     font-size:3rem;
+     font-size:1.5rem;
   }
 
-  .testimonial_para{
+  .card-tem .p{
     color:var(--greybg);
 
   }
+  .testimonial_fa:hover{
+    color:var(--blue) ;
+    background-color:transparent! important;
+    font-size:1.5rem;
 
+  }
 
-  h4{
+  .card-tem h6{
       color:var(--vert)
   }
 
   .tem-img{
-      width:100px;
-      height:100px;
+      width:70px;
+      height:70px;
+      margin-top:1rem
       }
 
+/*Card témoignage */
+.card-tem{
+  width:18rem;
+  height:23rem;
+  padding-top:1rem;
+  border-radius: 1rem;
+  border-bottom:5px solid var(--vert);
+  background-color: white;
+  color: var(--blue)!important;
+  
+}
+.card-tem:hover{
+  background-color: var(--blue)!important;
+  color:var(--greybg)!important;
+  border-bottom:5px solid var(--vert);
 
+}
+
+
+.bg-white-tem{
+  background-color: #f7f7f7;
+  /* clip-path: polygon(0 10%, 100% 0%, 100% 89%, 0 100%); */
+
+}
 
   .fun{
     padding:2.2rem;
@@ -82,7 +111,7 @@ font-size: 3rem;
 
   
 .border-top-blue{
-    background-image:linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2),rgba(0,0,0,0.1)), url("../imagepub/bg2.jpg") ;
+    background-image:linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2),rgba(0,0,0,0.1)), url("../imagepub/about1.jpg") ;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;

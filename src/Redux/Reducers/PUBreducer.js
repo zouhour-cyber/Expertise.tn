@@ -5,7 +5,7 @@ const initialState={
   } 
   
    export const PUBreducer = ( state = initialState, action) => {
-    const { type, payload } = action;
+   const { type, payload } = action;
     switch (type){
       case "GET_PUB_SUCCEDED":
     

@@ -50,7 +50,7 @@ setShow(false)
     <div>
     <div className='container mt-5'>
  <Button variant="primary" onClick={handleShow}>
-   Ajouter un Plat
+   Ajouter une publication
 </Button>
 
 <Modal show={show} onHide={handleClose}>
@@ -101,7 +101,7 @@ setShow(false)
  <tbody>
  {datas.map(el => (
    <tr>
-     <td> <img src={el.image} style={{ width: '15rem' , height:"10rem"}} className="imagetable"/> </td>
+     <td> <img src={el.image} style={{ width: '10rem'}} className="imagetable"/> </td>
      <td> <p> {el.titre}</p> </td>
      <td> <p> {el.description} </p></td>
 

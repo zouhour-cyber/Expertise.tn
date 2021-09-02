@@ -11,18 +11,18 @@
 
 
 .bannerexpert{
-    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2),rgba(0,0,0,0.1)),url("../imagepub/bg6.jpg") ;
+    background-image:linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url("../imagepub/expert.jpg") ;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    padding-top:0.1rem;
+    padding-top:1rem;
     font-weight: 500;
-    min-height: 500px;
+    min-height: 360px;
   
    }
 
-   .max-height{
-    margin-top:7rem;
+   .max-height1{
+    margin-top:-2.5rem;
     color:black;
  
   }
@@ -46,7 +46,7 @@
 
    .expert{
     padding: 3rem 2rem ;
-    background-color: rgba(18, 17, 20, 0.2);
+    background-color: #092c3f;
     border-radius: 1.6rem;
    
    }

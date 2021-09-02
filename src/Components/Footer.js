@@ -4,9 +4,9 @@ import './Footer.css';
 
 function Footer() {
     return(
-<div>
-<Row className="bgfooter">
-    <Col md={4} xs={12} className="mt-5">
+<div className="bgfooter">
+<Row >
+    <Col md={4} xs={12} sm={12} className="mt-5">
 
    <h4 className="logo"> Expertise <span className="vert">.tn</span></h4>
       {/* <img
@@ -21,7 +21,7 @@ function Footer() {
     
     </Col>
     <Col md={1} > </Col>
-    <Col md={2} xs={12} className="mt-5" >
+    <Col md={2} xs={12} sm={12} className="mt-5" >
     <h5> Liens utiles</h5>
     {/* <div className="tiretbottom"> </div> */}
     <h6>Nos experts</h6>
@@ -30,7 +30,7 @@ function Footer() {
  
     
     </Col>
-    <Col md={2} xs={12} className="mt-5">
+    <Col md={2} xs={12} sm={12} className="mt-5">
     <h5>Mon compte</h5>
     {/* <div className="tiretbottom"> </div> */}
 
@@ -39,7 +39,7 @@ function Footer() {
     <h6> Consulting </h6>
     
     </Col>
-    <Col md={3} className="mt-5">
+    <Col md={3} xs={12}  sm={12}  className="mt-5">
 
     <h5>Rejoignez-nous</h5>
     <Form className="d-flex">
@@ -47,12 +47,23 @@ function Footer() {
         type="search"
         placeholder="Adresse e-mail"
         className="mr-2 searchInput"
-        aria-label="Search"
       />
       <Button  className="newletter-btn"  > <i class="fas fa-paper-plane"></i> </Button>
     </Form>
     
-    <div className="footer-social-link " >
+    
+    </Col>
+   </Row>
+   
+    <hr color="white" className="mt-5"/>
+    <div className="">  
+<Row  className="d-flex justify-content-between ">   
+<Col md={4} xs={12} sm={12} className="text-center ">
+ <p><Link to="/">EXPERTISE.TN</Link>© Copyright 2021</p>
+ </Col>
+ <Col md={4} xs={12} sm={12}> </Col>
+ <Col md={4} xs={12} sm={12}>
+      <div className="footer-social-link text-center " >
       <ul class="d-flex justify-content-center">
       <li>
           <a href="#">
@@ -66,7 +77,7 @@ function Footer() {
       </li>
       <li>
           <a href="#">
-          <i class="fa fa-instagram"></i>
+          <i class="fab fa-linkedin-in"></i>
           </a>
       </li>
       <li>
@@ -77,27 +88,9 @@ function Footer() {
  
   </ul>
   </div>
-
-    </Col>
-   {/* <Col md={3} xs={12} className="mt-5">
-      <h5> Newsletter </h5>
-      <div className="tiretbottom"> </div>
-
-      <p>   Enter your email to create or restart your membership.</p>
-      <InputGroup>
-      <FormControl type="text" id="search-item" placeholder="E-mail adress "/>
-      <InputGroup.Append>
-          <Button id="bs" type="submit"> <i class="fa fa-chevron-right mx-1"> </i></Button>
-    </InputGroup.Append>
-        </InputGroup>
-   </Col> */}
-
-
-<Col md={12} className="text-center mt-5">
-<hr color="white"/>
- <p><Link to="/"> EXPERTISE.TN </Link> © Copyright 2021</p>
- </Col>
- </Row>
+</Col>
+</Row>
+</div>
 
 </div>
 

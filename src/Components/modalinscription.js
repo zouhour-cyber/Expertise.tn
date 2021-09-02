@@ -1,8 +1,12 @@
 import React from 'react'
 import {Form,Button,Modal, Row, Col, Tab, Tabs} from "react-bootstrap"
 import {useState } from 'react';
-import FormInscript from './FormInscrit';
-import FormConnexion from './FormConnexion';
+// import FormInscript from './FormInscrit';
+// import FormConnexion from './FormConnexion';
+import RegisterExpert from '../authScreen/RegisterExpert';
+import SignIn from '../authScreen/SignIn';
+// import Register from '../authScreen/Register';
+import RegisterUserForm from '../authScreen/userRegister';
 
 
 
@@ -16,26 +20,27 @@ const ModalInscri = (props) => {
 
   return(
     <div>
-    <Button  className="btn btn-success btn-sm"  onClick={handleShowUpdated}> Inscription </Button>
+    <Button  className="btn btn-outline-success btn-sm"  onClick={handleShowUpdated}> Inscription </Button>
         <Modal show={show} onHide={handleClose}   size="lg">
             <Modal.Header closeButton className="bg-success">
-            <Modal.Title> <h2> Expertise.tn </h2> </Modal.Title>
+            <Modal.Title> <h4> Expertise.tn </h4> </Modal.Title>
             </Modal.Header>
 
             <Modal.Body className="">
             <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example" className="d-flex flex-row  mb-3">
    <Tab eventKey="se connecter" title="se connecter">
-  <FormConnexion/>
+  <SignIn/>
   </Tab>
   
   <Tab eventKey="s'incrire" title="s'incrire">
   <Tabs  defaultActiveKey="profile" id="uncontrolled-tab-example" className="d-flex flex-row justify-content-center mb-3">
   
   <Tab eventKey="Client" title="Je suis Client" >
-  <FormInscript/>
+  <RegisterUserForm/>
   </Tab>
   <Tab eventKey="Expert" title="Je suis Expert">
-  <FormInscript/>
+  <RegisterExpert/>
+  
   </Tab>
 
 </Tabs>

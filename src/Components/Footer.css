@@ -14,9 +14,7 @@
   }
   
   /*-style social links ----------*/
-  .footer-social-link {
-    margin-top:2rem;
-  }
+
   .footer-social-link ul {
     list-style-type: none;}
   .footer-social-link li {
@@ -28,9 +26,7 @@
     border-radius: 20%;
     text-align: center;
     line-height: 30px;
-    margin-right: 10px;
-    color: white;
-    border: 1px solid white;
+    color: var(--text);
   
   }
   
@@ -46,10 +42,9 @@
     background-color: #b12816; 
     color:white;
   }
-  .footer-social-link a i.fa-instagram:hover {
-    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
-    box-shadow: 0px 3px 10px rgba(0,0,0,.25);
-    }
+  .footer-social-link a i.fa-linkedin-in:hover {
+    background-color: #0e76a8; 
+    color:white;}
   .footer-social-link a i.fa-instagram:hover {
     background-color: #B7242A; 
     color:white;}
@@ -63,12 +58,12 @@
     background-repeat: no-repeat;
     background-position:top;
     background-attachment: fixed;
-    padding:0rem 4rem;
+    padding:0rem 2rem;
     background-size: cover;
     min-height: 420px;
-    padding-top: 80px;
+    padding-top: 60px;
     color: white;
-   
+   margin:0;
   
   }
 
@@ -100,7 +95,7 @@
 
     }
   
-    #search-item{
+    /* #search-item{
     
       padding:1.3rem 2rem;
      
@@ -109,19 +104,16 @@
       border:0.5px groove white;
     
     }
-  
-    #bs{
-      background: rgba(20, 19, 19, 0.5) ;
-      border: none;
-      border:0.5px groove white;
-    }
+
+ 
   
     #search-item:focus{
       border:1px solid white;
-    }
+
+    } */
   
     .newletter-btn{
-      border-top-right-radius: 1.6rem;
+      border-top-right-radius: 1.8rem;
       background-color: var(--vert);
      }
   

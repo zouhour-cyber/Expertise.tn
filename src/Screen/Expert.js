@@ -1,19 +1,36 @@
-import React from 'react'
-import { Container, Row, Col, Button , Card, FormControl, Form, InputGroup} from 'react-bootstrap'
+import React, { useEffect } from 'react'
+
+import { Container, Row, Col, FormControl, Form} from 'react-bootstrap'
 import NavbarComponent from '../Components/NavbarComponent'
 import './Expert.css'
 import './Home.css'
+import './cardExpert.css'
+import {useDispatch,useSelector} from 'react-redux'
+import { getEXPERT } from '../Redux/Actions/crudExpertAction'
 
-const ExpertScreen = (props) => {
+
+const ExpertScreen = () => {
+
+  const dispatch= useDispatch();
+
+  const AfficheExpert = useSelector((state) => state.NosEXPERTS.NosexpertsData);
+
+
+  useEffect(() => {
+   dispatch(getEXPERT())
+      }, [dispatch])
+   console.log(AfficheExpert, "nos experts ???");
+
   return(
     <div>
 <NavbarComponent/>
 
-
 <Container className="bannerexpert" fluid>
+
+</Container>
 <Container>
-        <Row className="max-height">  
- <Col md={7}>       
+        <Row className="max-height1 d-flex justify-content-center text-center">  
+ <Col md={9}>       
 <Row className="expert d-flex justify-content-center"> 
 
 <Col className="mb-5" md={12} xs={12}> <h1> Chercher un expert </h1>   </Col> 
@@ -47,9 +64,64 @@ const ExpertScreen = (props) => {
                </Row>
                   
                 </Container>
+<Container>
+
+<div className=" d-flex justify-content-center" >
+  <Row className=""> 
+{AfficheExpert.map(el => ( 
+  <Col md={4} sm={5} xs={10} className=""> 
+    <div className="cardExpert-wrapper">
+      
+      <div className="cardExpert">
+        
+        <div className="cardExpert-image">
+          <img src={el.image} alt="profile one"/>
+        </div>
+
+      <ul className="social-icons text-center">
+        <li>
+          <a href="">
+            <i className="fab fa-facebook-f"></i>
+          </a>
+        </li>
+    
+        <li>
+          <a href="">
+            <i className="fab fa-twitter"></i>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <i className="fab fa-linkedin-in"></i>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <i className="fab fa-instagram"></i>
+          </a>
+        </li>
+      </ul>
+
+      <div className="details">
+        <h4>{el.fullName} </h4>
+         
+        <h6>  <span className="job-title">{el.Spécialité}</span> </h6>
+        <h6> {el.email} </h6>
+        <h6> {el.phone} </h6>
+
+   {/* <i class="far fa-calendar-plus fa-3x"></i> */}
 
 
+ 
+    
+    </div>
+  </div>
+  </div>
+  </Col> 
 
+))}
+</Row>
+</div>
 </Container>
 
     </div>

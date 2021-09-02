@@ -33,7 +33,7 @@ import {useDispatch} from 'react-redux'
 
   return(
       <>
-    <Button variant="warning" className="btn-sm brown"  onClick={handleShowUpdated}><i class="far fa-edit"></i></Button>
+    <Button  className="btn-sm btn-edit "  onClick={handleShowUpdated}><i class="far fa-edit"></i></Button>
         <Modal show={show} onHide={handleClose}>
             <Modal.Header closeButton className="bgdark">
             <Modal.Title> <h2> DELICE </h2> </Modal.Title>

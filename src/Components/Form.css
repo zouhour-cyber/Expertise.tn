@@ -1,0 +1,35 @@
+input.form-control{
+    border-bottom: 2px solid var(--text);
+    background-color: transparent;
+    margin:3px 0;
+    
+    
+}
+.form-control::placeholder{
+    font-family: cursive;
+    color:var(--text);
+    font-size: 1.2rem;
+    letter-spacing: 0.1em;
+}
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link{
+    font-family:  'Bebas Neue',cursive;
+    font-size: 1.2rem;
+    border:none;
+    color: var(--color-text);
+    letter-spacing: 0.1em;
+
+   
+}
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+    font-family:  'Bebas Neue',cursive;
+    border-bottom: 3px solid var(--vert);
+   color: var(--vert);
+    font-size: 1.2rem;
+    
+}
+
+
+.form-group{
+   margin-bottom:1rem;
+   
+}

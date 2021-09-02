@@ -1,10 +1,15 @@
- 
+// let user = JSON.parse(localStorage.getItem('user'));
+// let expert = JSON.parse(localStorage.getItem('expert'));
+
+// const initialState = user ? { loggedIn: true, user } : {};
+
 const inisialState ={
     token:null,
     user:{
         fullName:'',
         phone:'',
-        email:''
+        email:'',
+       
     },
     authenticate:false,
     authenticating:false 
@@ -20,7 +25,7 @@ const inisialState ={
       
            }
            break
-           case 'LOGIN_SUCCESS':
+      case 'LOGIN_SUCCESS':
                state ={
                    ...state,
                    user:action.payload.user,
@@ -29,16 +34,35 @@ const inisialState ={
                }
                
                break
-                
-                   case 'LOGOUT_SUCCESS':
-                    state={
-                        ...inisialState
+            //  case "GET_USER_SUCCEDED":
+    
+            //     state ={
+            //       ...state,
+                  
+            //       user:action.payload.user,
+            //       token:action.payload.token,
+                 
+
+            //     }
+         
+          case 'LOGOUT_SUCCESS':
+          state={
+           ...inisialState
                     }
-                    break
-                    
-           default:
+               break;
+          
+            //    case "GET_USER_SUCCEDED":
+    
+            //    state={
+            //       ...state,
+            //       user:action.payload,
+            //     }
         
         }
+
+        
+        
+        console.log('userReducer', state)
 
  return state
 };

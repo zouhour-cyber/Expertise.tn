@@ -1,0 +1,85 @@
+
+.bg-contact{
+    
+    background-image: url("../imagepub/abstract-envelope.svg") ;
+    background-position-y:top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    box-sizing: border-box;
+    height:135vh;
+    
+  }
+.contact{
+  padding-top:7rem;
+
+}
+  .bg-form{
+      max-width:470px;
+
+  }
+
+ .formcontact{
+   
+    /* background-color: rgba(39, 41, 46, 0.7)!important; */
+    border:2px solid var(--blue);
+    background-color: transparent;
+   
+  }
+  .formcontact::placeholder{
+    color:var(--color-text)
+  }
+
+  /* .formcontact .form-group{
+    margin-bottom:10rem;
+    
+ } */
+
+  .DonnéContact{
+    max-width:500px;
+    text-align: left;
+    /* padding-top:3rem; */
+
+   
+  }
+  .DonnéContact div i{
+    color:var(--vert);
+    margin-left:-1rem;
+    font-size: 1.2rem;
+
+  }
+
+  .footer-social-link a i {
+    width: 35px;
+    border-radius: 20%;
+    text-align: center;
+    line-height:35px;
+    color: var(--text);
+    background-color: rgba(3, 3, 3, 0.2);
+  
+  }
+
+  h6 ,h5, h4,h3{
+    color:var(--blue);
+    line-height: 1.5rem;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .btn-blue-normal{
+    background-color: var(--blue);
+  }
+
+  .btn-blue-normal:hover{
+    background-color: transparent;
+    border:2px solid var(--blue);
+    color:var(--blue);
+  }
+
+
+  .coordonnés{
+    color:var(--blue);
+    font-size:1.3rem;
+    line-height: 2rem;
+    font-family: 'cursive', sans-serif;
+
+  }

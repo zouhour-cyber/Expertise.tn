@@ -11,7 +11,7 @@ const PublicationsScreen = (props) => {
 <Container className="bannerpub" fluid>
       <Row className="d-flex  mx-auto">
       <Col md={6} xs={10} className="max-height text-justify" >
-        <h4 className="text-banner"> Découvrir nos Actualités </h4>
+        <h4 className="text-banner-actualité"> Découvrir nos Actualités </h4>
         
     <Row> 
     

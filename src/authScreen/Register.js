@@ -1,66 +1,88 @@
-import React, { useState } from 'react'
-import { Container,Row,Form,Col, Button } from 'react-bootstrap'
-import Input from '../Components/Input'
-import {useSelector} from 'react-redux'
-import { Redirect } from 'react-router-dom'
+// import React, { useState } from 'react'
+// import { Container,Row,Form,Col, Button } from 'react-bootstrap'
+// import {useDispatch, useSelector} from 'react-redux'
+// import { Redirect } from 'react-router-dom'
+// // import { UserRegister } from '../Redux/Actions/authAction'
 
-const Register = (props) => {
-    const [input,setInput]=useState({FullName:"",email:"", password:""})
+// const Register = (props) => {
+//     const [input,setInput]=useState({fullName:"",phone:"", email:"", password:"" })
 
-    const auth = useSelector(state =>state.auth)
-
-    if(auth.authenticate){
-        return <Redirect to={`/`} />
-    }
-
+//     const auth = useSelector(state =>state.auth)
+//     const dispatch = useDispatch()
+//     const [fullName,setFullName] = useState('')
+//     const [phone,setPhone] = useState('')
 
 
-    const hanleChange=(e)=>{
-        const {name,value}=e.target
-        setInput({
-            ...input,
-            [name]:value
-        })
-        console.log("input",input)
-    }
+//     const [email, setEmail] = useState('')
+//     const [password, setPassword] = useState('')
+//     const [error, setError] = useState('')
  
-    return (
-        <div>
-            <Container>
-                <Row>
+    
+//     if(auth.authenticate){
+//         return <Redirect to={`/Dashboard`} />
+//     }
+
+
+
+//     const hanleChange=(e)=>{
+//         const {name,value}=e.target
+//         setInput({
+//             ...input,
+//             [name]:value
+//         })
+//         console.log("input",input)
+//     }
+
+//     const UserSignUp =(e) =>{
+//        e.preventDefault();
+//         const user = {
+//             fullName,
+//             phone,
+//             email,
+//             password
+       
+
+//         }
+//         dispatch(UserRegister(user))
+//     }
+ 
+//     return (
+//         <div>
+//             <Container>
+//                 <Row>
                    
-                        <Form >
-                            <Row>
-                                <Col md={6}>
+//                         <Form onSubmit={UserSignUp} >
+//                             <Row>
+//                                 <Col md={10} className="mx-auto">
 
-                                <Form.Group controlId="formBasicEmail">
-<Form.Label> <h6> Nom  </h6></Form.Label>
-<Form.Control type="text" placeholder="FullName" name='FullName'  onChange={hanleChange} />
+//                                 <Form.Group controlId="formBasicEmail">
+// <Form.Control type="text" placeholder="Nom et prénom" name='fullName'  onChange={hanleChange} />
 
-</Form.Group><Form.Group controlId="formBasicPassword">
-<Form.Label> <h6> E-mail </h6></Form.Label>
-<Form.Control type="email" placeholder="E-mail"  name='email'   onChange={hanleChange}  />
-</Form.Group>
+// </Form.Group>
+// <Form.Group controlId="formBasicPassword">
+// <Form.Control type="number" placeholder="phone"  name='phone'   onChange={hanleChange}  />
+// </Form.Group>
 
-<Form.Group controlId="formBasicPassword">
-<Form.Label> <h6> Password </h6></Form.Label>
-<Form.Control type="password" placeholder="Password"  name='password'   onChange={hanleChange}  />
-</Form.Group>
-<Form.Group controlId="formBasicPassword">
-<Form.Label> <h6> phone </h6></Form.Label>
-<Form.Control type="number" placeholder="phone"  name='phone'   onChange={hanleChange}  />
-</Form.Group>
+// <Form.Group controlId="formBasicPassword">
+// <Form.Control type="email" placeholder="E-mail adresse"  name='email'   onChange={hanleChange}  />
+// </Form.Group>  
+
+// <Form.Group controlId="formBasicPassword">
+// <Form.Control type="password" placeholder="Password"  name='password'   onChange={hanleChange}  />
+// </Form.Group>
+
               
-                                   </Col>
-                             <Button variant="primary" type="submit">register</Button>
-                            </Row>
-                        </Form>
+                                 
+//      <Button variant="primary" className="btn mt-2" type="submit">register</Button>
+//                              </Col>
+//                             </Row>
+//                         </Form>
                   
-                </Row>
-            </Container>
+//                 </Row>
+//             </Container>
             
-        </div>
-    )
-}
+//         </div>
+//     )
+// }
 
-export default Register
+// export default Register

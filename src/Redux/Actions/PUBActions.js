@@ -35,7 +35,7 @@ export const addPUBApi=(titre, description ,image )=> async (dispatch) =>{
              }
 }
 
-//DELETE PLAT
+//DELETE Pub
 export const deleteItem = (id)=> async (dispatch) => {
     try {
   await deleteItems(id);

@@ -4,6 +4,7 @@ import Input from '../Components/Input'
 import {isUserLoggedIn, login} from '../Redux/Actions/authAction'
 import {useDispatch,useSelector} from 'react-redux'
 import { Redirect } from 'react-router-dom'
+import '../Components/Form.css'
 const SignIn = (props) => {
     
     const [email, setEmail] = useState('')
@@ -11,7 +12,16 @@ const SignIn = (props) => {
     const [error, setError] = useState('')
     const auth = useSelector(state =>state.auth)
     const dispatch = useDispatch()
+
     
+    useEffect(() => {
+        if (!auth.authentifcate){  
+       dispatch(isUserLoggedIn());
+       } 
+    },[])
+
+    
+
     const userLogin =(e)=>{
     e.preventDefault()
     const user = {
@@ -23,18 +33,17 @@ const SignIn = (props) => {
 }
 
 if(auth.authenticate){
-    return <Redirect to={`/`} />
+    return <Redirect to={`/ProfilUser`} />
 }
 
     return (
         <div>
              <Container>
                 <Row>
-                    
                         <Form onSubmit={userLogin}>
                             <Row>
-                            <Input label="Email" placeholder="Email" type="email" onChange={(e)=>{setEmail(e.target.value)}} />
-                            <Input label="Password" placeholder="Password"  type="password" onChange={(e)=>{setPassword(e.target.value)}} />
+                            <Input placeholder="Email" type="email" onChange={(e)=>{setEmail(e.target.value)}} />
+                            <Input  placeholder="Password"  type="password" onChange={(e)=>{setPassword(e.target.value)}} />
                              <Button variant="primary"  type="submit" className="mt-5">sign in</Button>
                             </Row>
                         </Form>

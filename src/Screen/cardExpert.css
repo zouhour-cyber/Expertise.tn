@@ -1,0 +1,170 @@
+:root{
+    --vert: #32c788;
+    --greybg:#f7f7f7;
+    --blue: #092c3f;
+    --color-text: #57667e;
+    --text:#bcc1c9;
+  
+  }
+  
+  * {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+ 
+}
+
+
+.cardExpert-wrapper {
+
+  width: 350px;
+  height: 500px;
+  position: relative;
+} 
+
+.cardExpert {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 320px;
+  height: 400px;
+  transform: translate(-50%,-50%);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+  transition: 0.5s;
+}
+  
+.cardExpert .cardExpert-image {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background-color: #000;
+    transition: .5s;
+  }
+  
+  .cardExpert:hover img{
+    opacity: 0.4;
+    transition: .5s;
+
+  }
+
+  .cardExpert .cardExpert-image img{
+    width:100%;
+    
+}
+
+.cardExpert:hover .cardExpert-image {
+  transform: translateY(-160px);
+  transition: all .9s;
+}
+
+/**** Social Icons *****/
+
+.social-icons {
+  position: absolute;
+  top: 40%;
+  left: 45%;
+  transform: translate(-50%,-50%);
+  z-index: 3;
+  display: flex;
+ align-items: center;
+ align-content: space-evenly;
+ justify-content: center;
+ text-align: center;
+}
+.social-icons li{
+    list-style: none;}
+    
+.social-icons li a{
+      position: relative;
+      display: block;
+      width: 20px;
+      height: 20px;
+      line-height: 20px;
+      text-align: center;
+      background: #fff;
+      font-size: 20px;
+      color:#333;
+      font-weight: bold;
+      margin: 0 6px;
+      transition: .4s;
+      transform: translateY(200px);
+      opacity: 0;
+      display: flex;
+      align-items:center;
+      justify-content: center;
+    } 
+
+
+.cardExpert:hover .social-icons li a {
+  transform: translateY(0px);
+  opacity: 1; 
+}
+
+.social-icons li a:hover {
+  background:  var(--vert); 
+  transition: .2s;
+  
+}
+.social-icons li a:hover .fab {
+    color: #fff;
+  } 
+
+.social-icons li a .fab {
+  transition: .8s;
+
+}
+.social-icons li a .fab:hover {
+    transform: rotateY(360deg);
+    color: #fff;
+    transition: .8s;
+
+} 
+
+.cardExpert:hover li:nth-child(1) a {
+    transition-delay: 0.1s;
+}
+.cardExpert:hover li:nth-child(2) a {
+  transition-delay: 0.2s;
+}
+.cardExpert:hover li:nth-child(3) a {
+  transition-delay: 0.3s;
+}
+.cardExpert:hover li:nth-child(4) a {
+  transition-delay: 0.4s;
+}
+
+/**** Personal Details ****/
+
+.details {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color:white;
+  width: 100%;
+  height: 150px;
+  z-index: 1;
+  padding: 10px;
+}
+.details h2 {
+    margin: 5px 0;
+    padding: 0;
+    text-align: center;
+
+}
+.details h2 .job-title {
+        font-size: 1rem;
+        line-height: 2rem;
+        color: #333;
+        font-weight: 300;
+
+
+    }
+
+
+

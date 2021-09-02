@@ -7,70 +7,114 @@ const Témoignage = (props) => {
     <div>
 
 <Carousel >
-  <Carousel.Item   className="bg-blue"    style={{minHeight: "450px"}}>
+  <Carousel.Item   className=""    style={{minHeight: "450px"}}  >
   
-    <Carousel.Caption className="d-flex align-items-center">
-    <Row className="slider-tem ">
+    <Carousel.Caption className="">
+      <Container fluid> 
+      <Row className="d-flex justify-content-evenly"> 
+    <Col md={3} sm={12} className="card-tem "  >
    <i className="fa fa-quote-left testimonial_fa mb-5" aria-hidden="true"></i>
-      <p className="testimonial_para">Lorem Ipsum ist ein einfacher Demo-Text für die Print- und Schriftindustrie. Lorem Ipsum ist in der Industrie bereits der Standard Demo-Text "Sed ut perspiciatis </p><br/>
-         <Row className="d-flex  justify-content-center align-items-center">
-                    <Col sm={1} xs={12}>
+      <p className="testimonial_para">Lorem Ipsum ist ein einfacher Demo-Text für die Print- und Schriftindustrie </p>
+         <Row className="">
+                    <Col sm={12} xs={12}>
                         <img src="image/temoignage1.webp" className="img-responsive tem-img" style={{ borderRadius:"50%"}}/>
                     </Col>
-                     <Col sm={5} xs={12} className="">
-                        <h4><strong>Kais Hamza</strong></h4>
-                        <p className="testimonial_subtitle"><span> Maraicher</span><br/>
-                        <span>Producteur de tomate</span>
+                     <Col sm={12} xs={12} className="mt-2">
+                        <h6><strong>Kais Hamza</strong></h6>
+                        <p className="testimonial_subtitle"><span> Maraicher</span>
                         </p>
                     </Col>
            </Row>
-     </Row>
-
-    </Carousel.Caption>
-  </Carousel.Item>
-  <Carousel.Item     className="bg-blue"  style={{height: "450px"}}>
- 
-
-    <Carousel.Caption>
-    <Row className="">
-    <i className="fa fa-quote-left testimonial_fa mb-5" aria-hidden="true"></i>
-      <p className="testimonial_para">Lorem Ipsum ist ein einfacher Demo-Text für die Print- und Schriftindustrie. Lorem Ipsum ist in der Industrie bereits der Standard Demo-Text "Sed ut perspiciatis </p><br/>
-         <Row className="d-flex  justify-content-center align-items-center ">
-                    <Col sm={1} xs={12}>
+     </Col>
+     <Col md={3} sm={12} className="card-tem bg-blue ">
+   <i className="fa fa-quote-left testimonial_fa mb-5" aria-hidden="true"></i>
+      <p className="testimonial_para ">Lorem Ipsum ist ein einfacher Demo-Text für die Print- und Schriftindustrie </p>
+         <Row className="">
+                    <Col sm={12} xs={12}>
                         <img src="image/temoignage2.webp" className="img-responsive tem-img" style={{ borderRadius:"50%"}}/>
                     </Col>
-                     <Col sm={5} xs={12}>
-                        <h4><strong> Mahdi hadded</strong></h4>
-                        <p className="testimonial_subtitle"><span>Eleveur de bovin </span><br/>
-                        <span>Elevage vache laitière</span>
+                     <Col sm={12} xs={12} className="mt-2">
+                        <h6><strong> Seif Sassi</strong></h6>
+                        <p className="testimonial_subtitle"><span> Eleveur de bovin</span>
                         </p>
                     </Col>
            </Row>
-     </Row>
-    </Carousel.Caption>
-  </Carousel.Item>
-  <Carousel.Item     className="bg-blue"  style={{height: "450px"}}>
-   
+     </Col>
 
-    <Carousel.Caption>
-    <Row className="">
-    <i className="fa fa-quote-left testimonial_fa mb-5" aria-hidden="true"></i>
-
-      <p className="testimonial_para">Lorem Ipsum ist ein einfacher Demo-Text für die Print- und Schriftindustrie. Lorem Ipsum ist in der Industrie bereits der Standard Demo-Text "Sed ut perspiciatis</p><br/>
-         <Row className="d-flex  justify-content-center  align-items-center">
-                    <Col sm={1} xs={12}>
-                        <img src="image/temoignage3.webp" className="img-responsive" style={{width: "100px" , height: "100px", borderRadius:"50%"}}/>
+     <Col md={3} sm={12} className="card-tem bg-blue">
+   <i className="fa fa-quote-left testimonial_fa mb-5" aria-hidden="true"></i>
+      <p className="testimonial_para">Lorem Ipsum ist ein einfacher Demo-Text für die Print- und Schriftindustrie </p>
+         <Row className="">
+                    <Col sm={12} xs={12}>
+                        <img src="image/temoignage3.webp" className="img-responsive tem-img" style={{ borderRadius:"50%"}}/>
                     </Col>
-                     <Col sm={5} xs={12}>
-                        <h4><strong>Jack Andreson</strong></h4>
-                        <p className="testimonial_subtitle"><span>Chlinical Chemistry Technologist</span><br/>
-                        <span>Officeal All Star Cafe</span>
+                     <Col sm={12} xs={12} className="mt-2">
+                        <h6><strong>Sami ben Othmen</strong></h6>
+                        <p className="testimonial_subtitle"><span> Vétérinaire</span>
                         </p>
                     </Col>
            </Row>
+     </Col>
+
+
      </Row>
+     </Container>
     </Carousel.Caption>
   </Carousel.Item>
+  <Carousel.Item   className=""    style={{minHeight: "450px"}}>
+  
+  <Carousel.Caption className="">
+    <Container fluid> 
+    <Row className="d-flex justify-content-evenly"> 
+  <Col md={3} sm={12} className="card-tem bg-blue"  >
+ <i className="fa fa-quote-left testimonial_fa mb-5" aria-hidden="true"></i>
+    <p className="testimonial_para">Lorem Ipsum ist ein einfacher Demo-Text für die Print- und Schriftindustrie </p>
+       <Row className="">
+                  <Col sm={12} xs={12}>
+                      <img src="image/temoignage1.webp" className="img-responsive tem-img" style={{ borderRadius:"50%"}}/>
+                  </Col>
+                   <Col sm={12} xs={12} className="mt-2">
+                      <h6><strong>Kais Hamza</strong></h6>
+                      <p className="testimonial_subtitle"><span> Maraicher</span><br/>
+                      </p>
+                  </Col>
+         </Row>
+   </Col>
+   <Col md={3} sm={12} className="card-tem bg-blue ">
+ <i className="fa fa-quote-left testimonial_fa mb-5" aria-hidden="true"></i>
+    <p className="testimonial_para">Lorem Ipsum ist ein einfacher Demo-Text für die Print- und Schriftindustrie </p>
+       <Row className="">
+                  <Col sm={12} xs={12}>
+                      <img src="image/temoignage2.webp" className="img-responsive tem-img" style={{ borderRadius:"50%"}}/>
+                  </Col>
+                   <Col sm={12} xs={12} className="mt-2">
+                      <h6><strong>Mahdi hadded</strong></h6>
+                      <p className="testimonial_subtitle"><span> Eleveur de bovin</span><br/>
+                      </p>
+                  </Col>
+         </Row>
+   </Col>
+
+   <Col md={3} sm={12} className="card-tem bg-blue">
+ <i className="fa fa-quote-left testimonial_fa mb-5" aria-hidden="true"></i>
+    <p className="testimonial_para">Lorem Ipsum ist ein einfacher Demo-Text für die Print- und Schriftindustrie </p>
+       <Row className="">
+                  <Col sm={12} xs={12}>
+                      <img src="image/temoignage3.webp" className="img-responsive tem-img" style={{ borderRadius:"50%"}}/>
+                  </Col>
+                   <Col sm={12} xs={12} className="mt-2">
+                      <h6><strong>Sami ben Othmen</strong></h6>
+                      <p className="testimonial_subtitle"><span> Vétérinaire</span><br/>
+                      </p>
+                  </Col>
+         </Row>
+   </Col>
+
+
+   </Row>
+   </Container>
+  </Carousel.Caption>
+</Carousel.Item>
 </Carousel>
 
 <div   className="section-padding "> </div>
