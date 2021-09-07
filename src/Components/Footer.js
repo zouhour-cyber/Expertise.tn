@@ -6,9 +6,9 @@ function Footer() {
     return(
 <div className="bgfooter">
 <Row >
-    <Col md={4} xs={12} sm={12} className="mt-5">
+    <Col md={3} xs={12} sm={12} className="mt-5">
 
-   <h4 className="logo"> Expertise <span className="vert">.tn</span></h4>
+   <h4 className="logo mb-4"> <span className="logoVert"> Find.</span>Expert</h4>
       {/* <img
         src="image/logo-dark.webp" color="#FF5A5F"
         width="100"
@@ -17,27 +17,28 @@ function Footer() {
         alt="moviehunter"
       /> */}
 
-      <h6 className="mt-4 text-left">  EXPERTISES.TN, réunit les experts de l'agriculture, de l’agro-industrie, de l’environnement & de productions et santé animales.</h6>
+      <div className="mt-5 justify-text-left">  <span className="logoVert"> Find.</span>Expert, réunit les experts de l'agriculture, de l’agro-industrie & de productions et santé animales.</div>
     
     </Col>
-    <Col md={1} > </Col>
-    <Col md={2} xs={12} sm={12} className="mt-5" >
+    {/* <Col md={} > </Col> */}
+    <Col md={3} xs={12} sm={12} className="mt-5" >
     <h5> Liens utiles</h5>
+    <ul> 
     {/* <div className="tiretbottom"> </div> */}
-    <h6>Nos experts</h6>
-    <h6>Inscription</h6>
-    <h6>Actualités </h6>
- 
+    <li> <Link to="/Expert">Nos experts</Link> </li>
+   <li> <Link to="/">Inscription</Link>  </li>
+   <li>  <Link to="/Actualités">Actualités </Link> </li>
+   </ul>
     
     </Col>
-    <Col md={2} xs={12} sm={12} className="mt-5">
+    <Col md={3} xs={12} sm={12} className="mt-5">
     <h5>Mon compte</h5>
     {/* <div className="tiretbottom"> </div> */}
-
-    <h6> Inscription</h6>
-    <h6> Rendez-vous </h6>
-    <h6> Consulting </h6>
-    
+ <ul> 
+    <li> <Link to="/RegisterExpert"> Inscription expert </Link></li>
+    <li> <Link to="#"> Rendez-vous </Link> </li>
+    <li> <Link to="#"> Consulting </Link> </li>
+</ul>
     </Col>
     <Col md={3} xs={12}  sm={12}  className="mt-5">
 
@@ -59,7 +60,7 @@ function Footer() {
     <div className="">  
 <Row  className="d-flex justify-content-between ">   
 <Col md={4} xs={12} sm={12} className="text-center ">
- <p><Link to="/">EXPERTISE.TN</Link>© Copyright 2021</p>
+ <p><Link to="/"> <span className="logoVert"> Find.</span>Expert</Link>©Copyright 2021</p>
  </Col>
  <Col md={4} xs={12} sm={12}> </Col>
  <Col md={4} xs={12} sm={12}>
@@ -91,6 +92,7 @@ function Footer() {
 </Col>
 </Row>
 </div>
+
 
 </div>
 

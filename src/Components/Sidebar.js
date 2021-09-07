@@ -39,17 +39,26 @@ const Sidebar = (props) => {
                 Utilisateurs
             </NavText>
         </NavItem>
-        <NavItem eventKey="commande">
+        <NavItem eventKey="rendez-vous">
             <NavIcon>
-                <i className="fa fa-bell" style={{ fontSize: '1.75em' }} /> 
+            <Link to="/Dashboard/RDVrecu">  <i className="fa fa-bell" style={{ fontSize: '1.75em' }} />  </Link>
             </NavIcon>
             <NavText>
-                Commande
+            Rendez-vous
             </NavText>
         </NavItem>
+        <NavItem eventKey="rendez-vous">
+            <NavIcon>
+            <Link to="/Dashboard/DashboardContact">  <i className="far fa-comment-dots" style={{ fontSize: '1.75em' }} />  </Link>
+            </NavIcon>
+            <NavText>
+            Contact
+            </NavText>
+        </NavItem>
+
         <NavItem eventKey="publication">
             <NavIcon>
-            <Link to="/Dashboardpublication">  <i class="fas fa-blog"  style={{ fontSize: '1.75em' }}></i> </Link>
+            <Link to="/Dashboard/Dashboardpublication">  <i class="fas fa-blog"  style={{ fontSize: '1.75em' }}></i> </Link>
             </NavIcon>
             <NavText>
 

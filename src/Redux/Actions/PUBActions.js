@@ -48,7 +48,7 @@ export const deleteItem = (id)=> async (dispatch) => {
     } catch (error) {
       console.log(error);
     }
-  };
+  }
 
   //UPDATE PUB
    export const updateItem =(id, titre , description ,image)  => async dispatch =>{
@@ -65,3 +65,22 @@ export const deleteItem = (id)=> async (dispatch) => {
         console.log(error);
       }
     }
+
+
+    //getPub BY ID
+
+export const  getPublicationById= (id) => async (dispatch) =>  {
+  try{    
+      const res= await axios.get(`http://localhost:4000/app/PUB/getPUBbyId/${id}`)
+      dispatch({
+          type:"GET_PUBbyID_SUCCEDED",
+          payload:res.data
+
+      })
+      console.log("Get PUB by ID", res.data)
+
+      }
+      catch (error) {
+          console.log(error);
+       }
+} 

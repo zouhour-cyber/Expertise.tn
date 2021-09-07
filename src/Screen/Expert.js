@@ -1,12 +1,12 @@
-import React, { useEffect } from 'react'
-
+import React, { useEffect, useState } from 'react'
+import {Link} from 'react-router-dom';
 import { Container, Row, Col, FormControl, Form} from 'react-bootstrap'
 import NavbarComponent from '../Components/NavbarComponent'
 import './Expert.css'
 import './Home.css'
 import './cardExpert.css'
 import {useDispatch,useSelector} from 'react-redux'
-import { getEXPERT } from '../Redux/Actions/crudExpertAction'
+import { getEXPERT, getEXPERTById } from '../Redux/Actions/crudExpertAction'
 
 
 const ExpertScreen = () => {
@@ -21,6 +21,14 @@ const ExpertScreen = () => {
       }, [dispatch])
    console.log(AfficheExpert, "nos experts ???");
 
+   const [search, setSearch] = useState("");
+   const handelChange=(e)=>{
+      setSearch(e.target.value);
+   } 
+
+   const getOneEXPERT=(id) =>{
+    dispatch(getEXPERTById(id))
+  }
   return(
     <div>
 <NavbarComponent/>
@@ -33,15 +41,16 @@ const ExpertScreen = () => {
  <Col md={9}>       
 <Row className="expert d-flex justify-content-center"> 
 
-<Col className="mb-5" md={12} xs={12}> <h1> Chercher un expert </h1>   </Col> 
+<Col className="mb-5" md={12} xs={12}> <h1> Rechercher un expert </h1>   </Col> 
 <Col md={12} xs={12}> 
 <Form className="d-flex"> 
 
       <FormControl
         type="search"
-        placeholder="Rechercher un expert"
+        placeholder="Expert / Spécialité ..."
         className="searchInput"
         aria-label="Search"
+        onChange={handelChange}
       />
 
       <Form.Select className="btn-select" aria-label="Default select example">
@@ -66,11 +75,13 @@ const ExpertScreen = () => {
                 </Container>
 <Container>
 
-<div className=" d-flex justify-content-center" >
+<div className=" d-flex justify-content-center text-center" >
   <Row className=""> 
-{AfficheExpert.map(el => ( 
-  <Col md={4} sm={5} xs={10} className=""> 
-    <div className="cardExpert-wrapper">
+  {AfficheExpert.filter(el => el.Spécialité.toLowerCase().includes(search.toLowerCase())||el.fullName.toLowerCase().includes(search.toLowerCase()))
+
+.map(el => ( 
+  <Col md={4} sm={5} xs={12} className=""> 
+    <div className="cardExpert-wrapper text-center">
       
       <div className="cardExpert">
         
@@ -108,8 +119,10 @@ const ExpertScreen = () => {
         <h6>  <span className="job-title">{el.Spécialité}</span> </h6>
         <h6> {el.email} </h6>
         <h6> {el.phone} </h6>
+        <hr></hr>
+        <Link to="/Expertprofil"> <a className="rdv" onClick={() => getOneEXPERT(el._id)}> Prendre un rendez-vous  <i class="far fa-calendar-plus fa-2x"></i></a> </Link>
 
-   {/* <i class="far fa-calendar-plus fa-3x"></i> */}
+  
 
 
  

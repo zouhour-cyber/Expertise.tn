@@ -13,10 +13,10 @@ const NavbarExpert = () => {
   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
   <Navbar.Collapse id="responsive-navbar-nav">
     <Nav className="mx-auto">
-      <Link  to="/Expert" className="navlink">Mon Profil</Link>
-      <Link to="/Publication" className="navlink"> Publication </Link>
+      <Link  to="/DashboardExpert" className="navlink">Mon Profil</Link>
+      <Link to="/Dashboard/Dashboardpublication" className="navlink"> Publication </Link>
 
-      <Link to="/Actualités" className="navlink"> Rendez-vous </Link>
+      <Link to="/RDVDashExpert" className="navlink"> Rendez-vous </Link>
     </Nav>
 
     <Link  to="/register"> Kais <img src="image/temoignage1.webp" className="img-responsive" style={{ borderRadius:"50%", height:"3rem", width:"3rem"}}/> </Link>

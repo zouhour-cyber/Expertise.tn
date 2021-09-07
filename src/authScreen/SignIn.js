@@ -11,6 +11,7 @@ const SignIn = (props) => {
     const [password, setPassword] = useState('')
     const [error, setError] = useState('')
     const auth = useSelector(state =>state.auth)
+    const user = useSelector(state =>state.auth.user)
     const dispatch = useDispatch()
 
     
@@ -19,9 +20,7 @@ const SignIn = (props) => {
        dispatch(isUserLoggedIn());
        } 
     },[])
-
     
-
     const userLogin =(e)=>{
     e.preventDefault()
     const user = {
@@ -32,9 +31,23 @@ const SignIn = (props) => {
 
 }
 
-if(auth.authenticate){
-    return <Redirect to={`/ProfilUser`} />
+// if(auth.authenticate){
+//     return <Redirect to={`/ProfilUser`} />
+// }
+
+if (user) 
+{
+ if (auth.authenticate && user.role === "user" ) return <Redirect to="/ProfilUser" />;
 }
+if (user) 
+{
+ if (auth.authenticate && user.role === "admin") return <Redirect to="/Dashboard/Dashboardpublication" />;
+}
+if (user) 
+{
+ if (auth.authenticate && user.role === "expert" && user.status==="validé") return <Redirect to="/DashboardExpert" />;
+}
+
 
     return (
         <div>

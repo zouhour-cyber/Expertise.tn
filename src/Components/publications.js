@@ -1,7 +1,9 @@
 import {React, useEffect }from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import {getPUB} from '../Redux/Actions/PUBActions'
+import {getPUB, getPublicationById} from '../Redux/Actions/PUBActions'
 import {Container,Row, Col,  Button , Card } from 'react-bootstrap';
+import {Link} from 'react-router-dom';
+
 import './card.css'
 import './publication.css'
 
@@ -14,6 +16,12 @@ const Publications = () => {
       dispatch(getPUB())
          }, [dispatch])
       console.log(datas, "nos pub ???");
+
+     const getOnePUB=(id) =>{
+       dispatch(getPublicationById(id))
+     }
+
+      
     return (<div className="mt-5">
             <h1>Liste des Publications</h1>
 
@@ -34,7 +42,7 @@ const Publications = () => {
                </Card.Text>
                <div className="d-flex justify-content-between"> 
                <div> 14/08/2021</div> 
-               <div className="text-success" > Lire plus</div>  
+              <Link to="/OnePublication" >  <a className="text-success" onClick={() => getOnePUB(el._id)} > Lire plus</a>  </Link>
 
                </div>
              </Card.Body>

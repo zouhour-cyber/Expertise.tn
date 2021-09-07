@@ -17,6 +17,12 @@ import DashboardValidationExpert from './Components/DashboardValidationExpert';
 import Contact from './Screen/Contact';
 import RegisterUserForm from './authScreen/userRegister';
 import ProfilUser from './Screen/ProfilUser';
+import OnePublication from './Screen/OnePublication';
+import ExpertProfil from './Screen/expertprofil';
+import RDVrecu from './Components/RDVrecu';
+import ContactDashboard from './Components/contactDashboard';
+import RDVDashExpert from './Components/RDVDashExpert';
+import UserRDV from './Screen/UserRDV';
 
 
 function App() {
@@ -37,18 +43,31 @@ function App() {
   <Switch>
     <Route exact path="/"  component={Home}/>
     {/* <PrivetRoute  path="/Dashboard"  component={Dashboard}/> */}
-        <Route  path="/Dashboardpublication"  component={Dashboard}/>
+        <Route  path="/Dashboard/Dashboardpublication"  component={Dashboard}/>
+        <Route  path="/Dashboard/RDVrecu"  component={RDVrecu}/>
+        <Route  path="/Dashboard/DashboardContact"  component={ContactDashboard}/>
+
+        
+        
+        
         <Route  path="/DashboardValidationExpert"   component={DashboardValidationExpert}/>
         <PrivetRoute  path="/ProfilUser" component={ProfilUser}/> 
+        <PrivetRoute  path="/UserRDV" component={UserRDV}/> 
 
     <Route  exact path="/Actualités"   component={PublicationsScreen}/>
     <Route  exact path="/Expert"   component={ExpertScreen}/>
     <Route  exact path="/DashboardExpert"   component={DashboardExpert}/>
-    {/* <Route  exact path="/RDVexpert"   component={RDVexpert}/> */}
-    <Route  exact path="/Contact"   component={Contact}/>
+    <Route  exact path="/RDVDashExpert"   component={RDVDashExpert}/>
 
 
     
+    {/* <Route  exact path="/RDVexpert"   component={RDVexpert}/> */}
+    <Route  exact path="/Contact"   component={Contact}/>
+    <Route  exact path="/OnePublication"   component={OnePublication}/>
+      <Route exact path="/ExpertProfil" component={ExpertProfil}/> 
+
+
+      
 
 
     <Route path="/RegisterExpert"  component={RegisterExpert} />

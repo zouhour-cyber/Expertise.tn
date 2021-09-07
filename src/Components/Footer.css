@@ -1,3 +1,8 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300&display=swap');
+
+
+
 :root{
     --vert: #32c788;
     --greybg:#f7f7f7;
@@ -83,18 +88,32 @@
     text-decoration: none;
     color:var(--greybg);
     margin-bottom: 1.2rem;
+    font-family: 'Poppins', sans-serif;
+
     text-align: left;
   }
 
     .bgfooter h5{
     color:var(--vert);
-    padding-left:2px;
     border-left:4px solid var(--vert);
     margin-bottom: 2rem;
+    font-family: 'Poppins', sans-serif;
+    }
 
+
+    .bgfooter ul li{
+      list-style: none;
+      color:var(--greybg);
+      margin-bottom: 1.2rem;
+      font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+      text-align: left;
+    }
+   
+    .bgfooter ul li a{
+      font-size:16px;
 
     }
-  
     /* #search-item{
     
       padding:1.3rem 2rem;
@@ -115,5 +134,10 @@
     .newletter-btn{
       border-top-right-radius: 1.8rem;
       background-color: var(--vert);
+
      }
-  
+  .bgfooter .justify-text-left{
+    text-align: left;
+  }
+
+  .searchInput{width:100%;}

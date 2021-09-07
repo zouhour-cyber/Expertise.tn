@@ -5,11 +5,15 @@ import {useState } from 'react';
 import NavbarComponent from '../Components/NavbarComponent';
 import Footer from '../Components/Footer';
 import './contact.css'
+import {addContact} from '../Redux/Actions/contactActions'
+import { useDispatch } from 'react-redux';
 
 
 const Contact = (props) => {
 
- const [input,setInput]=useState({nom:"",email:"", message:"" })
+const dispatch = useDispatch()
+
+ const [input,setInput]=useState({nom:"",email:"",message:"" })
 
 const hanleChange=(e)=>{
     const {name,value}=e.target
@@ -18,6 +22,12 @@ const hanleChange=(e)=>{
         [name]:value
     })
     console.log("input",input)
+}
+
+//ADD Menu 
+const addNewCONTACT=()=>{
+dispatch (addContact(input.fullName , input.email, input.message)) 
+console.log("inpuuuuuuuuuuuut",input)
 }
 
   return(
@@ -75,12 +85,12 @@ const hanleChange=(e)=>{
 </Form.Group>
 
 <Form.Group controlId="formBasicPassword">
-<Form.Control type="text" as="textarea" style={{ height: '120px' }} className="formcontact" placeholder="Saisir un message"  name='message'   onChange={hanleChange}  />
+<Form.Control type="text"  as="textarea" style={{ height: '120px' }} className="formcontact" placeholder="Saisir un message"  name='message'   onChange={hanleChange}  />
 </Form.Group>
 
 
 <Col md={12} className="d-flex justify-content-start"> 
-<Button className="btn-blue-normal  mt-3 " > Envoyer </Button>
+<Button className="btn-blue-normal  mt-3 "  onClick={addNewCONTACT} > Envoyer </Button>
 </Col>
 </Form>
 

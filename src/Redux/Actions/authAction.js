@@ -9,7 +9,7 @@ export const signup = (user) => {
   return async (dispatch) => {
 
       dispatch({type: "USER_REGISTER_REQUEST"});
-      const res = await axios.post(`http://localhost:4000/user/register`, {
+      const res = await axios.post("http://localhost:4000/user/register", {
           ...user
       });
 
@@ -37,7 +37,7 @@ export const login =(user)=> {
    
     try{
        
-     const res =  await   axios
+     const res =  await axios
      .post(`http://localhost:4000/user/signin`,{...user})
             if (res.status === 200){
               

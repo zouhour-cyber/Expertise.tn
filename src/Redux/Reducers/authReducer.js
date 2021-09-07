@@ -1,14 +1,10 @@
-// let user = JSON.parse(localStorage.getItem('user'));
-// let expert = JSON.parse(localStorage.getItem('expert'));
 
-// const initialState = user ? { loggedIn: true, user } : {};
 
 const inisialState ={
     token:null,
     user:{
-        fullName:'',
-        phone:'',
-        email:'',
+        fullName:''
+        ,phone:'',email:'',Spécialité:'',Description:'',image:'',role:''
        
     },
     authenticate:false,

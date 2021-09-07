@@ -20,6 +20,7 @@
   width: 350px;
   height: 500px;
   position: relative;
+
 } 
 
 .cardExpert {
@@ -34,6 +35,7 @@
   box-shadow: 0 5px 18px rgba(0, 0, 0, 0.6);
   cursor: pointer;
   transition: 0.5s;
+
 }
   
 .cardExpert .cardExpert-image {
@@ -59,7 +61,7 @@
 }
 
 .cardExpert:hover .cardExpert-image {
-  transform: translateY(-160px);
+  transform: translateY(-200px);
   transition: all .9s;
 }
 
@@ -102,7 +104,7 @@
 
 
 .cardExpert:hover .social-icons li a {
-  transform: translateY(0px);
+  transform: translateY(-20px);
   opacity: 1; 
 }
 
@@ -145,11 +147,23 @@
   position: absolute;
   bottom: 0;
   left: 0;
-  background-color:white;
+  color:white;
   width: 100%;
-  height: 150px;
+  height: 200px;
   z-index: 1;
-  padding: 10px;
+  padding: 16px 5px;
+  background-color: var(--blue);
+
+}
+
+.details a .rdv{
+  margin-bottom:5rem!important;
+}
+
+.details h4{color:var(--vert)}
+
+.details h6{
+  color:var(--greybg);
 }
 .details h2 {
     margin: 5px 0;
@@ -165,6 +179,7 @@
 
 
     }
+    
 
 
 

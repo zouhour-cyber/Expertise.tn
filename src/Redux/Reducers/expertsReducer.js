@@ -11,6 +11,12 @@ case "GET_EXPERT_SUCCEDED":
        NosexpertsData:action.payload,
      }
 
+     case "GET_EXPERTbyID_SUCCEDED":
+        return {
+          ...state,
+          NosexpertsData: action.payload
+          
+        }
     }
     console.log('expertsReducer', state)
 

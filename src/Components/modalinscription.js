@@ -39,7 +39,7 @@ const ModalInscri = (props) => {
   <RegisterUserForm/>
   </Tab>
   <Tab eventKey="Expert" title="Je suis Expert">
-  <RegisterExpert/>
+  {/* <RegisterExpert/> */}
   
   </Tab>
 

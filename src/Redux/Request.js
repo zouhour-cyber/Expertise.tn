@@ -35,3 +35,24 @@ export const fetchLogin = (user) =>{
 export const fetchExpert=(user ) => {
   Axios.get('http://localhost:4000/expert/getEXPERT')
 }
+
+
+// //addPUB
+// function addNewRDV(date,heure,status) {
+//   return Api.post("/rdv/addRDV", {date,heure,status});
+// }
+
+// export default {addNewRDV}
+
+
+export const deleterdv=(id) => {
+  Axios.delete(`${SERVER_BASE_API}/rdv/deleteRDV/${id}`).then(res=>res.data).then(res=> window.location.reload());
+
+}
+
+
+
+export const deletecontact=(id) => {
+  Axios.delete(`http://localhost:4000/contact/deleteCONTACT/${id}`).then(res=>res.data).then(res=> window.location.reload());
+
+}

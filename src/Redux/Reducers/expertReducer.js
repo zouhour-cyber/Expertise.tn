@@ -25,6 +25,7 @@ export const ExpertRegisterReducer = (state = initState, action) => {
                 error: action.payload.error
             }
             break;
+        
        
     }
 

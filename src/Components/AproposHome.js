@@ -14,7 +14,7 @@ const AproposHome = (props) => {
     
       </Col>
     <Col md={6}  className='mt-5 '  >
-    <div className="Apropos">Expertise.tn , les leader du vivant  </div>
+    <div className="Apropos"> <span className="logoVert"> FIND.</span>Expert , les leader du vivant  </div>
     <div className="Apropos-text"> Parce que l'agriculture est en perpétuelle mutation, soumise à des réglementations et des techniques de plus en plus sophistiquées, les exploitants agricoles doivent aujourd’hui faire face à des problématiques complexes.</div>
     <Button variant="success"> Demander un rendez-vous !! </Button>
     </Col>

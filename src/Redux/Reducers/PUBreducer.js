@@ -28,9 +28,14 @@ const initialState={
               datas: state.datas.filter(
                 data => data._id !== payload
               )
-            }
+          }
 
-            
+            case "GET_PUBbyID_SUCCEDED":
+              return {
+                ...state,
+                datas: payload
+                
+              }
         
     }
     console.log('inchallah labes si ali', state)

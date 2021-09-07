@@ -18,3 +18,19 @@ export const  getEXPERT= () => async (dispatch) =>  {
             console.log(error);
          }
 } 
+
+export const  getEXPERTById= (id) => async (dispatch) =>  {
+    try{    
+        const res= await axios.get(`http://localhost:4000/expert/getExpertbyId/${id}`)
+        dispatch({
+            type:"GET_EXPERTbyID_SUCCEDED",
+            payload:res.data
+  
+        })
+        console.log("Get EXPERT by ID", res.data)
+  
+        }
+        catch (error) {
+            console.log(error);
+         }
+  } 
