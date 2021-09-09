@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import NavbarExpert from '../Components/NavbarExpert'
 import { Container, Row, Col, Button, Form} from 'react-bootstrap'
 import "./ExpertDashboard.css"
 import {useDispatch,useSelector} from 'react-redux'
@@ -15,7 +14,7 @@ const DashboardExpert = (props) => {
  
     // update's state //
     const [update, setUpdate] = useState(
-  {id, fullName:userDonnées.fullName , phone:userDonnées.phone, email:userDonnées.email,image:userDonnées.image, password:userDonnées.password} )
+  {id, fullName:userDonnées.fullName,phone:userDonnées.phone,email:userDonnées.email,image:userDonnées.image, password:userDonnées.password} )
     //Handle Change//
     const hanleChange = (e) => {
         const {name, value} = e.target
@@ -26,7 +25,7 @@ const DashboardExpert = (props) => {
     //UPDATE PLAT //
     const updateUser= (id) => {
      
-      dispatch(updateUSER(id, update.fullName , update.phone, update.email,update.image, update.password ))
+      dispatch(updateUSER(id, update.fullName,update.phone, update.email,update.image, update.password ))
       console.log("updaaaate User", update)
     }
 

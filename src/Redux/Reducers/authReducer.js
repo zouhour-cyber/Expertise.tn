@@ -30,30 +30,14 @@ const inisialState ={
                }
                
                break
-            //  case "GET_USER_SUCCEDED":
-    
-            //     state ={
-            //       ...state,
-                  
-            //       user:action.payload.user,
-            //       token:action.payload.token,
-                 
-
-            //     }
-         
+          
           case 'LOGOUT_SUCCESS':
           state={
            ...inisialState
                     }
                break;
           
-            //    case "GET_USER_SUCCEDED":
-    
-            //    state={
-            //       ...state,
-            //       user:action.payload,
-            //     }
-        
+       
         }
 
         

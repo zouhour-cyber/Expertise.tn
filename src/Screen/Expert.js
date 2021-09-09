@@ -6,21 +6,20 @@ import './Expert.css'
 import './Home.css'
 import './cardExpert.css'
 import {useDispatch,useSelector} from 'react-redux'
-import { getUserbyId } from '../Redux/Actions/crudExpertAction'
-import { getUSER } from '../Redux/Actions/authAction';
+import { getUSER, getUserbyId } from '../Redux/Actions/authAction';
 
 
 const ExpertScreen = () => {
 
   const dispatch= useDispatch();
 
-  const AfficheExpert = useSelector((state) => state.utilisateur.userData);
+  const userData = useSelector((state) => state.utilisateur.userData);
 
 
   useEffect(() => {
    dispatch(getUSER())
       }, [dispatch])
-   console.log(AfficheExpert, "nos experts ???");
+   console.log(userData, "nos experts ???");
 
    const [search, setSearch] = useState("");
    const handelChange=(e)=>{
@@ -79,7 +78,7 @@ const ExpertScreen = () => {
 
 <div className=" d-flex justify-content-center text-center" >
   <Row className=""> 
-  {AfficheExpert
+  {userData
   // .filter(el => el.Spécialité.toLowerCase().includes(search.toLowerCase())||el.fullName.toLowerCase().includes(search.toLowerCase()))
   .filter((el) => {
 
@@ -127,12 +126,10 @@ const ExpertScreen = () => {
       <div className="details">
         <h4>{el.fullName} </h4>
          
-        <h6>  <span className="job-title">{el.Spécialité}</span> </h6>
-        <h6> {el.email} </h6>
-        <h6> {el.phone} </h6>
-        <hr></hr>
-        <Link to="/Expertprofil"> <a className="rdv" onClick={() => getOneEXPERT(el._id)}> Prendre un rendez-vous  <i class="far fa-calendar-plus fa-2x"></i></a> </Link>
-
+        <h6>  Spécialité : <span className="job-title">{el.Spécialité}</span> </h6>
+        <> 
+        <Link to="/Expertprofil"> <a style={{fontWeight:"600"}} onClick={() => getOneEXPERT(el._id)}> Prendre un rendez-vous  <i class="far fa-calendar-plus fa-2x"></i></a> </Link>
+        </>
   
 
 

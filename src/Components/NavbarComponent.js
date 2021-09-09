@@ -2,7 +2,6 @@ import React from 'react'
 import {Nav, Navbar, Container, Button} from 'react-bootstrap'
 import {Link} from 'react-router-dom';
 import { signout } from '../Redux/Actions/authAction';
-import ModalInscri from './modalinscription';
 import {useDispatch,useSelector} from 'react-redux'
 
 // import ModalInscri from './modalinscription';
@@ -13,7 +12,7 @@ const NavbarComponent = () => {
   const user = useSelector((state) => state.auth.user);
 
   const dispatch= useDispatch();
-  
+
   const logout=()=>{
     dispatch(signout())
   }

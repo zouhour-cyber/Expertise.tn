@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import { Container, Row, Col, Button, Form,Collapse,Card, NavLink} from 'react-bootstrap'
+import { Container, Row, Col, Button, Form} from 'react-bootstrap'
 import "./ExpertDashboard.css"
 import NavbarComponent from '../Components/NavbarComponent'
 import {useDispatch,useSelector} from 'react-redux'
 import { updateUSER } from '../Redux/Actions/authAction'
 import { getRDV } from '../Redux/Actions/RDVactions'
-import { getEXPERT } from '../Redux/Actions/crudExpertAction'
+// import { getEXPERT } from '../Redux/Actions/crudExpertAction'
 import { Link } from 'react-router-dom'
 
 
@@ -43,8 +43,6 @@ const ProfilUser = () => {
 
 
 
-     //boutton collapse 
-     const [open, setOpen] = useState(false);
 
   return(
     <div>
@@ -56,7 +54,7 @@ const ProfilUser = () => {
     <Col md={4} >
     <div className="bg-white ">   
 
-    <img src="image/temoignage1.webp" className="img-responsive my-4" style={{ borderRadius:"50%", height:"9rem", width:"9rem"}}/>
+    <img src={userDonnées.image} className="img-responsive my-4" style={{ borderRadius:"50%", height:"9rem", width:"9rem"}}/>
     <div>  <h4>  {userDonnées.fullName}</h4>  </div>
 
    
@@ -85,23 +83,23 @@ const ProfilUser = () => {
     <Form   className="formulaire"  >
     <h3 className="my-4"> Modifier mes données </h3>
 
-<Form.Group  >
+<Form.Group className="my-2" >
 <Form.Control type="text" placeholder="Nom et prénom" name='fullName' defaultValue={userDonnées.fullName} onChange={hanleChange} />
 
 </Form.Group>
-<Form.Group controlId="formBasicPassword">
+<Form.Group className="my-2">
 <Form.Control type="tel" placeholder="Téléphone"  name='phone'  defaultValue={userDonnées.phone} onChange={hanleChange}  />
 </Form.Group>
 
-<Form.Group controlId="formBasicPassword">
+<Form.Group className="my-2">
 <Form.Control type="password" placeholder="Password"  name='password'  defaultValue={userDonnées.password} onChange={hanleChange}  />
 </Form.Group>
 
-<Form.Group controlId="formBasicPassword">
+<Form.Group className="my-2">
 <Form.Control type="text" placeholder="Entrer votre photo"  name='image' defaultValue={userDonnées.image} onChange={hanleChange}    />
 </Form.Group>
 
-<Form.Group controlId="formBasicPassword">
+<Form.Group className="my-2">
 <Form.Control type="email" placeholder="Entrer votre adresse e-mail"  name='email' defaultValue={userDonnées.email} onChange={hanleChange}    />
 </Form.Group>
 

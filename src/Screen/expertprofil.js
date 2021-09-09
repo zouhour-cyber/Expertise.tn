@@ -1,27 +1,25 @@
 import {React, useEffect, useState }from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { getUserbyId } from '../Redux/Actions/crudExpertAction'
 import {Container,Row, Col,  Button , Badge , Form} from 'react-bootstrap';
 import NavbarComponent from '../Components/NavbarComponent';
 import Footer from '../Components/Footer';
 import '../Components/Footer.css';
 import { addRDVApi } from '../Redux/Actions/RDVactions';
-const ExpertProfil = (el) => {
+import { getUserbyId } from '../Redux/Actions/authAction';
+const ExpertProfil = (id) => {
   const dispatch = useDispatch()
-  const AfficheExpert = useSelector((state) => state.NosEXPERTS.NosexpertsData);
-  // const userData = useSelector((state) => state.utilisateur.userData);
+  // const AfficheExpert = useSelector((state) => state.NosEXPERTS.NosexpertsData);
+ 
   const userDonnées = useSelector((state) => state.auth.user);
-  // const getOneEXPERT=(id) =>{
-  //   dispatch(getUserbyId(id))
-  // }
-
+  const userData = useSelector((state) => state.utilisateur.userData)
+ 
   useEffect(() => {
-   dispatch(getUserbyId(el._id))
+   dispatch(getUserbyId(id))
       }, [])
-   console.log(AfficheExpert._id + AfficheExpert.fullName, "get expert by ID???");
+   console.log(userData._id + userData.fullName, "get expert by ID???");
 
    //handle date input
-   const [input,setInput]=useState({date:"",heure:"", idExpert:`${AfficheExpert._id}`,nameExpert:`${AfficheExpert.fullName}`,nameUser:`${userDonnées.fullName}`, idUser:`${userDonnées._id}`})
+   const [input,setInput]=useState({date:"",heure:"", idExpert:"",nameExpert:"",nameUser:`${userDonnées.fullName}`, idUser:`${userDonnées._id}`})
 
 const hanleChange=(e)=>{
     const {name,value}=e.target
@@ -33,7 +31,7 @@ const hanleChange=(e)=>{
 }
    //ADD RDV
 const addNewRDV=()=>{
-  dispatch (addRDVApi(input.date , input.heure,input.idExpert,input.nameExpert,input.nameUser,input.idUser )) 
+  dispatch (addRDVApi(input.date,input.heure,userData._id,userData.fullName,input.nameUser,input.idUser )) 
   console.log("inpuuuuuuuuuuuut RDV",input)
   }
   
@@ -49,19 +47,19 @@ const addNewRDV=()=>{
             <div className="bg-vert2 p-2 my-5">   <> Info Général</></div>
             <Row className="d-flex justify-content-center ">
               <Col md={4} sm={12} xs={12}> 
-              <div> <img src={AfficheExpert.image}   style={{width:"280px",height:"340px", borderRadius:"10px" }}/>  </div>
+              <div> <img src={userData.image}   style={{width:"280px",height:"340px", borderRadius:"10px" }}/>  </div>
               </Col>
               <Col md={6} sm={12} xs={12} > 
               <div className="d-flex flex-column align-items-start ms-5 donéexpert" >
-                <span > -{AfficheExpert.Spécialité}</span>  
-              <div className=""> {AfficheExpert.fullName} </div>
+                <span > -{userData.Spécialité}</span>  
+              <div className=""> {userData.fullName} </div>
               <div className="my-2"> <Badge bg="success"> 700 views </Badge>  <Badge bg="blue"> 500 consultations </Badge>
               </div>
              <>
-              <div> Spécialité: {AfficheExpert.Spécialité} </div>
-              <div> Adresse e-mail: {AfficheExpert.email} </div>
-              <div> Numéro de téléphone :{AfficheExpert.phone} </div>
-              <div> Expérience: {AfficheExpert.Description} </div>
+              <div> Spécialité: {userData.Spécialité} </div>
+              <div> Adresse e-mail: {userData.email} </div>
+              <div> Numéro de téléphone :{userData.phone} </div>
+              <div> Expérience: {userData.Description} </div>
               </>
               </div> 
               </Col>
@@ -78,7 +76,7 @@ const addNewRDV=()=>{
             <Form.Control  type="time" name="heure" onChange={hanleChange}  />
             {/* <Form.Label >  <h6> id expert </h6>  </Form.Label>
 
-            <Form.Control  type="text" name="idExpert" defaultValue={AfficheExpert._id}  onChange={hanleChange}  />
+            <Form.Control  type="text" name="idExpert" defaultValue={userData._id}  onChange={hanleChange}  />
              */}
             {/* <Form.Label >  <h6> id user</h6>  </Form.Label>
  

@@ -11,8 +11,18 @@ case "GET_USER_SUCCEDED":
        userData:action.payload,
      }
 
+
+     case "GET_getUserbyId_SUCCEDED":
+        return {
+          ...state,
+          userData: action.payload
+          
+        }
+        
     }
     console.log('utilisateurReducer', state)
+
+    
 
     return state
    };

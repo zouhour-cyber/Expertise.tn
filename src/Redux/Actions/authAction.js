@@ -142,9 +142,9 @@ export const getUSER= () => async (dispatch) =>  {
 
 
   //UPDATE USER
-  export const updateUSER =(id,fullName,phone,email,status,password)  => async dispatch =>{
+  export const updateUSER =(id,fullName,phone,email,image,status,password)  => async dispatch =>{
     try{
-     const res = await axios.put(`http://localhost:4000/user/updateUser/${id}`, {fullName,phone,email,status,password}).then(res=>res.data).then(res=> window.location.reload())
+     const res = await axios.put(`http://localhost:4000/user/updateUser/${id}`, {fullName,phone,email,image,status,password}).then(res=>res.data).then(res=> window.location.reload())
         dispatch({
          type:"UPDATE_USER_SUCEDED",
          payload: res.data
@@ -172,3 +172,21 @@ const res = await axios.delete(`http://localhost:4000/user/deleteUser/${id}`).th
       console.log(error);
     }
   }
+
+
+
+  export const  getUserbyId= (id) => async (dispatch) =>  {
+    try{    
+        const res= await axios.get(`http://localhost:4000/user/getUserbyId/${id}`)
+        dispatch({
+            type:"GET_getUserbyId_SUCCEDED",
+            payload:res.data
+  
+        })
+        console.log("Get user by ID", res.data)
+  
+        }
+        catch (error) {
+            console.log(error);
+         }
+  } 

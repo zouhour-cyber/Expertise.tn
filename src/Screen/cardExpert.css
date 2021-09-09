@@ -18,7 +18,7 @@
 .cardExpert-wrapper {
 
   width: 350px;
-  height: 500px;
+  height: 450px;
   position: relative;
 
 } 
@@ -27,8 +27,8 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 320px;
-  height: 350px;
+  width: 330px;
+  height: 380px;
   transform: translate(-50%,-50%);
   border-radius: 16px;
   overflow: hidden;
@@ -62,7 +62,7 @@
 }
 
 .cardExpert:hover .cardExpert-image {
-  transform: translateY(-200px);
+  transform: translateY(-150px);
   transition: all .9s;
 }
 
@@ -150,16 +150,13 @@
   left: 0;
   color:white;
   width: 100%;
-  height: 200px;
+  height: 150px;
   z-index: 1;
   padding: 16px 5px;
   background-color: var(--blue);
 
 }
 
-.details a .rdv{
-  margin-bottom:5rem!important;
-}
 
 .details h4{color:var(--vert)}
 

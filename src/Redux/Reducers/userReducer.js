@@ -25,16 +25,7 @@ export const UserRegisterReducer = (state = initState, action) => {
                 error: action.payload.error
             }
             break;
-            // case "GET_USER_SUCCEDED":
-    
-            //     state ={
-            //       ...state,
-                  
-            //       user:action.payload.user,
-            //       token:action.payload.token,
-                 
-
-            //     }
+        
     }
 
     return state;

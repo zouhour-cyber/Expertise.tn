@@ -19,18 +19,3 @@ export const  getEXPERT= () => async (dispatch) =>  {
          }
 } 
 
-export const  getUserbyId= (id) => async (dispatch) =>  {
-    try{    
-        const res= await axios.get(`http://localhost:4000/user/getUserbyId/${id}`)
-        dispatch({
-            type:"GET_getUserbyId_SUCCEDED",
-            payload:res.data
-  
-        })
-        console.log("Get user by ID", res.data)
-  
-        }
-        catch (error) {
-            console.log(error);
-         }
-  } 
