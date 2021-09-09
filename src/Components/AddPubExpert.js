@@ -4,9 +4,8 @@ import {useState, useEffect} from 'react';
 import {useDispatch,useSelector} from 'react-redux'
 import { ModalEdit } from './ModalEdit';
 import {addPUBApi, getPUB, deleteItem} from '../Redux/Actions/PUBActions'
-import NavbarExpert from './NavbarExpert';
 
-const AjoutPUB = () => {
+const AddPubExpert = () => {
 
   //state de modal 
     const [show, setShow] = useState(false);
@@ -127,6 +126,6 @@ setShow(false)
 
  }
 
-export default AjoutPUB
+export default AddPubExpert
 
       

@@ -20,9 +20,9 @@ export const  getRDV= () => async (dispatch) =>  {
 
 
 //ADD RDV
-export const addRDVApi=(date,heure,idExpert,idUser,statusRDV)=> async (dispatch) =>{
+export const addRDVApi=(date,heure,idExpert,nameExpert,nameUser,idUser,statusRDV)=> async (dispatch) =>{
     try{
-        const res=await axios.post("http://localhost:4000/app/rdv/addRDV", {date,heure,idExpert,idUser,statusRDV });
+        const res=await axios.post("http://localhost:4000/app/rdv/addRDV", {date,heure,idExpert,nameExpert,nameUser,idUser,statusRDV });
         dispatch ({
             type:"ADD_RDV_SUCCEDED",
             payload:res.data

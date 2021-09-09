@@ -39,6 +39,7 @@ const DashboardValidationExpert = () => {
      <th>Nom et prénom</th>
      <th>Adresse E-mail</th>
      <th>Téléphone </th>
+     <th> Role</th>
      <th> Compte créé le</th>
      <th> Action </th>
 
@@ -53,6 +54,7 @@ const DashboardValidationExpert = () => {
 <td> {el.fullName} </td>
 <td>{el.email}  </td>
 <td>{el.phone}  </td>
+<td> {el.role}</td>
 <td> {el.createdAt}</td>
 <td><Button variant="outline-dark"  className="mr-2 btn-sm" onClick={() => deleteUser(el._id)} ><i  class="fa fa-times"></i></Button> </td>
 

@@ -44,7 +44,7 @@ const RDVrecu = (props) => {
          <tr> 
             <td> {el.date} </td>
             <td> {el.heure} </td>
-            <td> {el.status} </td>
+            <td> {el.statusRDV} </td>
 
  <td>  <Button variant="dark"  className="mr-1 btn-sm"  onClick={() => deleterdv(el._id)}
  ><i  class="fa fa-times"></i></Button>  

@@ -10,6 +10,8 @@ const RDVDashExpert = (props) => {
 
     const dispatch = useDispatch()
     const datasRDV= useSelector(state => state.RDVreducer.datasRDV)
+    const userDonnées = useSelector((state) => state.auth.user);
+    const id=userDonnées._id
 
     useEffect(() => {
      dispatch(getRDV())
@@ -32,20 +34,21 @@ const RDVDashExpert = (props) => {
 <thead >
             <tr>
                <th> Date</th> 
-               <th> Heure </th> 
+               <th> Heure </th>
+               <th> Client </th> 
                <th> Status </th> 
-
                <th> Action </th> 
 
             </tr>
 
 </thead>
 <tbody>
-        {datasRDV.map((el,key ) => (
+        {datasRDV.filter(el => el.idExpert === id).map((el,key ) => (
          <tr> 
             <td> {el.date} </td>
             <td> {el.heure} </td>
-            <td> {el.status} </td>
+             <td> {el.nameUser}</td>
+            <td> {el.statusRDV} </td>
          
  <td>  <Button variant="dark"  className="mr-1 btn-sm"  onClick={() => deleterdv(el._id)}
  ><i  class="fa fa-times"></i></Button>  

@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect} from 'react'
 import {useDispatch,useSelector} from 'react-redux'
 import { deleteRDV, getRDV } from '../Redux/Actions/RDVactions'
-import { Container, Row, Col, Button, Form,Collapse,Card, Table} from 'react-bootstrap'
+import { Container, Row, Col, Button, Table} from 'react-bootstrap'
 import NavbarComponent from '../Components/NavbarComponent'
 import { Link } from 'react-router-dom'
 import { EditRdv } from '../Components/EditRdv'
@@ -72,8 +72,8 @@ const UserRDV = (props) => {
                <th> Date</th> 
                <th> Heure </th>
                <th> Status </th>
+               <th> Expert </th>
                <th> Action </th> 
-            
 
 
             </tr>
@@ -85,8 +85,8 @@ const UserRDV = (props) => {
   <tr> 
  <td>  {el.date}</td>
  <td> {el.heure} </td>
- <td> {el.status} </td>
-
+ <td> {el.statusRDV} </td>
+  <td> {el.nameExpert}</td>
  <td>  <Button variant="dark"  className="btn-sm"  onClick={() => deleterdv(el._id)} 
  ><i  class="fa fa-times"></i></Button>  
  <EditRdv el={el}  id={el._id} /> </td>

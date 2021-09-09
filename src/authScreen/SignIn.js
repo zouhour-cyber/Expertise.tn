@@ -1,25 +1,27 @@
 import React,{useState,useEffect} from 'react'
-import { Container,Row,Form, Button } from 'react-bootstrap'
+import { Container,Row,Col, Form, Button } from 'react-bootstrap'
 import Input from '../Components/Input'
 import {isUserLoggedIn, login} from '../Redux/Actions/authAction'
 import {useDispatch,useSelector} from 'react-redux'
 import { Redirect } from 'react-router-dom'
 import '../Components/Form.css'
+import RegisterUserForm from './userRegister'
 const SignIn = (props) => {
     
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [error, setError] = useState('')
     const auth = useSelector(state =>state.auth)
-    const user = useSelector(state =>state.auth.user)
+    const user = useSelector((state) => state.auth.user);
+
     const dispatch = useDispatch()
 
     
-    useEffect(() => {
-        if (!auth.authentifcate){  
-       dispatch(isUserLoggedIn());
-       } 
-    },[])
+    // useEffect(() => {
+    //     if (!auth.authenticate ){  
+    //    dispatch(isUserLoggedIn());
+    //    } 
+    // },[])
     
     const userLogin =(e)=>{
     e.preventDefault()
@@ -35,32 +37,36 @@ const SignIn = (props) => {
 //     return <Redirect to={`/ProfilUser`} />
 // }
 
-if (user) 
+if (user)
 {
- if (auth.authenticate && user.role === "user" ) return <Redirect to="/ProfilUser" />;
+ if (auth.authenticate && user.role === "user" ) return <Redirect to="/ProfilUser" />
 }
-if (user) 
+
+if (user)
 {
- if (auth.authenticate && user.role === "admin") return <Redirect to="/Dashboard/Dashboardpublication" />;
+ if (auth.authenticate && user.role === "admin") return <Redirect to="/Dashboard/Dashboardpublication" />
 }
-if (user) 
+
+if (user)
 {
- if (auth.authenticate && user.role === "expert" && user.status==="validé") return <Redirect to="/DashboardExpert" />;
+ if (auth.authenticate && user.role === "expert") return <Redirect to="/DashboardExpert" />
 }
+// {(auth.authenticate && user.role === "expert" ) ? <Redirect to="/DashboardExpert"/> : (auth.authenticate && user.role === "user") ? <Redirect to="/ProfilUser"/>:  (auth.authenticate && user.role === "admin") ? <Redirect to="/Dashboard/Dashboardpublication"/> : <RegisterUserForm/> }
 
 
     return (
         <div>
              <Container>
-                <Row>
+                <Row className="d-flex justify-content-center">
+                    <Col md={9} xs={12} sm={12}> 
                         <Form onSubmit={userLogin}>
-                            <Row>
+                           
                             <Input placeholder="Email" type="email" onChange={(e)=>{setEmail(e.target.value)}} />
                             <Input  placeholder="Password"  type="password" onChange={(e)=>{setPassword(e.target.value)}} />
-                             <Button variant="primary"  type="submit" className="mt-5">sign in</Button>
-                            </Row>
+                             <Button  style={{width:"100%", backgroundColor:"var(--blue)", color:"white"}} type="submit" className="mt-4">se connecter</Button>
+                          
                         </Form>
-                
+                        </Col>
                 </Row>
             </Container>
         </div>

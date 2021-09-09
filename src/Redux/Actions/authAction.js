@@ -4,7 +4,7 @@ import axios from "axios";
 
 export const signup = (user) => {
 
-  console.log(user)
+  console.log(user, "afficher user")
 
   return async (dispatch) => {
 
@@ -32,7 +32,7 @@ export const signup = (user) => {
  
 
 export const login =(user)=> {
-    console.log(user)
+    console.log(user, "user login")
     return async(dispatch) =>{
    
     try{
@@ -142,9 +142,9 @@ export const getUSER= () => async (dispatch) =>  {
 
 
   //UPDATE USER
-  export const updateUSER =(id,fullName,phone,email,password)  => async dispatch =>{
+  export const updateUSER =(id,fullName,phone,email,status,password)  => async dispatch =>{
     try{
-     const res = await axios.put(`http://localhost:4000/user/updateUser/${id}`, {fullName,phone,email,password}).then(res=>res.data).then(res=> window.location.reload())
+     const res = await axios.put(`http://localhost:4000/user/updateUser/${id}`, {fullName,phone,email,status,password}).then(res=>res.data).then(res=> window.location.reload())
         dispatch({
          type:"UPDATE_USER_SUCEDED",
          payload: res.data

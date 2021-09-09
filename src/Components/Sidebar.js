@@ -21,8 +21,8 @@ const Sidebar = (props) => {
         <NavItem eventKey="home">
         
             <NavIcon>
-                <i className="fa fa-fw fa-home" style={{ fontSize: '1.75em' }} />
-               
+            <Link to="/">   <i className="fa fa-fw fa-home" style={{ fontSize: '1.75em',color:'#f7f7f7'}} />
+               </Link>
             </NavIcon>
            
             <NavText>
@@ -31,36 +31,36 @@ const Sidebar = (props) => {
             </NavText>
         
         </NavItem>
-        <NavItem eventKey="user">
+        <NavItem eventKey="user"  >
             <NavIcon>
-               <Link to="/DashboardValidationExpert"> <i className="fa fa-user" style={{ fontSize: '1.75em' }} /> </Link> 
+               <Link to="/DashboardValidationExpert"> <i className="fa fa-user" style={{ fontSize: '1.75em',color:'#f7f7f7'}} /> </Link> 
             </NavIcon>
-            <NavText>
+            <NavText style={{color:'#f7f7f7'}}>
                 Utilisateurs
             </NavText>
         </NavItem>
         <NavItem eventKey="rendez-vous">
-            <NavIcon>
-            <Link to="/Dashboard/RDVrecu">  <i className="fa fa-bell" style={{ fontSize: '1.75em' }} />  </Link>
+            <NavIcon >
+            <Link to="/Dashboard/RDVrecu">  <i className="fa fa-bell" style={{ fontSize: '1.75em',color:'#f7f7f7'}} />  </Link>
             </NavIcon>
-            <NavText>
+            <NavText style={{color:'#f7f7f7'}}>
             Rendez-vous
             </NavText>
         </NavItem>
         <NavItem eventKey="rendez-vous">
             <NavIcon>
-            <Link to="/Dashboard/DashboardContact">  <i className="far fa-comment-dots" style={{ fontSize: '1.75em' }} />  </Link>
+            <Link to="/Dashboard/DashboardContact">  <i className="far fa-comment-dots" style={{ fontSize: '1.75em',color:'#f7f7f7'}} />  </Link>
             </NavIcon>
-            <NavText>
+            <NavText style={{color:'#f7f7f7'}}>
             Contact
             </NavText>
         </NavItem>
 
         <NavItem eventKey="publication">
             <NavIcon>
-            <Link to="/Dashboard/Dashboardpublication">  <i class="fas fa-blog"  style={{ fontSize: '1.75em' }}></i> </Link>
+            <Link to="/Dashboard/Dashboardpublication">  <i class="fas fa-blog"  style={{ fontSize: '1.75em',color:'#f7f7f7'}}></i> </Link>
             </NavIcon>
-            <NavText>
+            <NavText style={{color:'#f7f7f7'}}>
 
                Ajout publication 
               

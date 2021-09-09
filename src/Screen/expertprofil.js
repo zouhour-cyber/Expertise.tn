@@ -1,30 +1,27 @@
 import {React, useEffect, useState }from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { getEXPERTById } from '../Redux/Actions/crudExpertAction'
+import { getUserbyId } from '../Redux/Actions/crudExpertAction'
 import {Container,Row, Col,  Button , Badge , Form} from 'react-bootstrap';
 import NavbarComponent from '../Components/NavbarComponent';
 import Footer from '../Components/Footer';
 import '../Components/Footer.css';
 import { addRDVApi } from '../Redux/Actions/RDVactions';
-
-
-
-const ExpertProfil = (props) => {
-
+const ExpertProfil = (el) => {
   const dispatch = useDispatch()
   const AfficheExpert = useSelector((state) => state.NosEXPERTS.NosexpertsData);
   // const userData = useSelector((state) => state.utilisateur.userData);
   const userDonnées = useSelector((state) => state.auth.user);
-
-
+  // const getOneEXPERT=(id) =>{
+  //   dispatch(getUserbyId(id))
+  // }
 
   useEffect(() => {
-   dispatch(getEXPERTById())
+   dispatch(getUserbyId(el._id))
       }, [])
-   console.log(AfficheExpert, "une publication???");
+   console.log(AfficheExpert._id + AfficheExpert.fullName, "get expert by ID???");
 
    //handle date input
-   const [input,setInput]=useState({date:"",heure:"", idExpert:`${AfficheExpert._id}`, idUser:`${userDonnées._id}`})
+   const [input,setInput]=useState({date:"",heure:"", idExpert:`${AfficheExpert._id}`,nameExpert:`${AfficheExpert.fullName}`,nameUser:`${userDonnées.fullName}`, idUser:`${userDonnées._id}`})
 
 const hanleChange=(e)=>{
     const {name,value}=e.target
@@ -36,7 +33,7 @@ const hanleChange=(e)=>{
 }
    //ADD RDV
 const addNewRDV=()=>{
-  dispatch (addRDVApi(input.date , input.heure,input.idExpert,input.idUser )) 
+  dispatch (addRDVApi(input.date , input.heure,input.idExpert,input.nameExpert,input.nameUser,input.idUser )) 
   console.log("inpuuuuuuuuuuuut RDV",input)
   }
   

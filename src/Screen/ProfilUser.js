@@ -19,7 +19,7 @@ const ProfilUser = () => {
  
     // update's state //
     const [update, setUpdate] = useState(
-  {id, fullName:userDonnées.fullName , phone:userDonnées.phone, email:userDonnées.email, password:userDonnées.password} )
+  {id, fullName:userDonnées.fullName , phone:userDonnées.phone, email:userDonnées.email,image:userDonnées.image, password:userDonnées.password} )
     //Handle Change//
     const hanleChange = (e) => {
         const {name, value} = e.target
@@ -30,7 +30,7 @@ const ProfilUser = () => {
     //UPDATE PLAT //
     const updateUser= (id) => {
      
-      dispatch(updateUSER(id, update.fullName , update.phone, update.email, update.password ))
+      dispatch(updateUSER(id, update.fullName , update.phone, update.email,update.image, update.password ))
       console.log("updaaaate User", update)
     }
     //get mes Rendez-vous
@@ -97,6 +97,9 @@ const ProfilUser = () => {
 <Form.Control type="password" placeholder="Password"  name='password'  defaultValue={userDonnées.password} onChange={hanleChange}  />
 </Form.Group>
 
+<Form.Group controlId="formBasicPassword">
+<Form.Control type="text" placeholder="Entrer votre photo"  name='image' defaultValue={userDonnées.image} onChange={hanleChange}    />
+</Form.Group>
 
 <Form.Group controlId="formBasicPassword">
 <Form.Control type="email" placeholder="Entrer votre adresse e-mail"  name='email' defaultValue={userDonnées.email} onChange={hanleChange}    />

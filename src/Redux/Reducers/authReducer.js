@@ -4,10 +4,10 @@ const inisialState ={
     token:null,
     user:{
         fullName:''
-        ,phone:'',email:'',Spécialité:'',Description:'',image:'',role:''
+        ,phone:'',email:'',Spécialité:'',Description:'',image:'',status:'',role:''
        
     },
-    authenticate:false,
+    authenticate :false,
     authenticating:false 
 }
 

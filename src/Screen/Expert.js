@@ -6,18 +6,19 @@ import './Expert.css'
 import './Home.css'
 import './cardExpert.css'
 import {useDispatch,useSelector} from 'react-redux'
-import { getEXPERT, getEXPERTById } from '../Redux/Actions/crudExpertAction'
+import { getUserbyId } from '../Redux/Actions/crudExpertAction'
+import { getUSER } from '../Redux/Actions/authAction';
 
 
 const ExpertScreen = () => {
 
   const dispatch= useDispatch();
 
-  const AfficheExpert = useSelector((state) => state.NosEXPERTS.NosexpertsData);
+  const AfficheExpert = useSelector((state) => state.utilisateur.userData);
 
 
   useEffect(() => {
-   dispatch(getEXPERT())
+   dispatch(getUSER())
       }, [dispatch])
    console.log(AfficheExpert, "nos experts ???");
 
@@ -27,7 +28,7 @@ const ExpertScreen = () => {
    } 
 
    const getOneEXPERT=(id) =>{
-    dispatch(getEXPERTById(id))
+    dispatch(getUserbyId(id))
   }
   return(
     <div>
@@ -53,9 +54,10 @@ const ExpertScreen = () => {
         onChange={handelChange}
       />
 
-      <Form.Select className="btn-select" aria-label="Default select example">
-  <option disabled> Spécialité</option>
-  <option value="1">Céréaliculture</option>
+      <select className="btn-select" aria-label="Default select example"  onChange={handelChange}
+  >
+  <option selected> Spécialité</option>
+  <option value="1">céréaliculture </option>
   <option value="2">Oléiculture</option>
   <option value="3">Arboriculture</option>
   <option value="4">Horticulture</option>
@@ -64,7 +66,7 @@ const ExpertScreen = () => {
   <option value="7">Agro-alimentaire</option>
   <option value="8">Vétérinaire</option>
   <option value="9">Production animale</option>
-</Form.Select>
+</select>
   
 </Form>        
 </Col>
@@ -77,9 +79,18 @@ const ExpertScreen = () => {
 
 <div className=" d-flex justify-content-center text-center" >
   <Row className=""> 
-  {AfficheExpert.filter(el => el.Spécialité.toLowerCase().includes(search.toLowerCase())||el.fullName.toLowerCase().includes(search.toLowerCase()))
+  {AfficheExpert
+  // .filter(el => el.Spécialité.toLowerCase().includes(search.toLowerCase())||el.fullName.toLowerCase().includes(search.toLowerCase()))
+  .filter((el) => {
 
-.map(el => ( 
+    if (
+      (el.role === "expert" && search === "") ||
+      (el.role === "expert" && el.Spécialité.toLowerCase().includes(search.toLowerCase()))
+    ) {
+      return el;
+    }
+  })
+.map((el) => ( 
   <Col md={4} sm={5} xs={12} className=""> 
     <div className="cardExpert-wrapper text-center">
       

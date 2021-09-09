@@ -33,17 +33,8 @@ const ModalInscri = (props) => {
   </Tab>
   
   <Tab eventKey="s'incrire" title="s'incrire">
-  <Tabs  defaultActiveKey="profile" id="uncontrolled-tab-example" className="d-flex flex-row justify-content-center mb-3">
-  
-  <Tab eventKey="Client" title="Je suis Client" >
   <RegisterUserForm/>
-  </Tab>
-  <Tab eventKey="Expert" title="Je suis Expert">
-  {/* <RegisterExpert/> */}
-  
-  </Tab>
 
-</Tabs>
   </Tab>
  
 </Tabs>

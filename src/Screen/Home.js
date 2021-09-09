@@ -10,6 +10,7 @@ import Partenaires from '../Components/partenaires'
 import CardsExpertise from '../Components/CardsExpertise'
 import AproposHome from '../Components/AproposHome'
 import BannerHome from '../Components/BannerHome'
+import { Link } from 'react-router-dom'
 
 const Home = (props)=> {
 
@@ -30,7 +31,7 @@ const Home = (props)=> {
 <Row className=" text-center"> 
 
   <Col md={12} xs={12}  className="Apropos" > Vous êtes expert agronome certifié ?</Col>
-  <Col md={12} xs={12}>  <NavLink href="RegisterExpert">  <Button className="mt-3 btn-blue" variant="dark" style={{ width: '15rem'}}>  Rejoignez-nous  </Button>  </NavLink>
+  <Col md={12} xs={12}>  <Link to="/Register">  <Button className="mt-3 btn-blue" variant="dark" style={{ width: '15rem'}}>  Rejoignez-nous  </Button>  </Link>
 </Col>
 </Row>
 
