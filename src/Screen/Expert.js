@@ -7,6 +7,7 @@ import './Home.css'
 import './cardExpert.css'
 import {useDispatch,useSelector} from 'react-redux'
 import { getUSER, getUserbyId } from '../Redux/Actions/authAction';
+import Footer from '../Components/Footer';
 
 
 const ExpertScreen = () => {
@@ -144,7 +145,7 @@ const ExpertScreen = () => {
 </Row>
 </div>
 </Container>
-
+<Footer/>
     </div>
    )
 

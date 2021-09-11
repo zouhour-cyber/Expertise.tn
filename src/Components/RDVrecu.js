@@ -4,6 +4,7 @@ import { deleteRDV, getRDV } from '../Redux/Actions/RDVactions'
 import {Container,Row, Col, Table, Button , Card } from 'react-bootstrap';
 import { EditRdv } from './EditRdv';
 import Sidebar from  './Sidebar';
+import NavbarAdmin from './NavbarAdmin';
 
 const RDVrecu = (props) => {
 
@@ -22,12 +23,17 @@ const RDVrecu = (props) => {
   }
 
   return(
-    <div className="mt-3">
-<Container>
+    <div className="">
+        <NavbarAdmin/>
+<Container fluid>
     <Row>
-        <Col md={2}> <Sidebar/> </Col>
-        <Col md={10} xs={10}>
-        <Table className="text-center" >
+        <Col md={2} sm={1} xs={1}> <Sidebar/> </Col>
+        <Col md={10} sm={11} xs={11}>
+
+        <div className="d-flex justify-content-left breadcrumbs mt-2" >  
+     <div > <a href ="/DashboardInterface" className="active">Dashboard /</a>Rendez-vous</div>
+     </div>
+        <Table  responsive="md" responsive="sm" className="text-center" >
 <thead >
             <tr>
                <th> Date</th> 

@@ -2,6 +2,7 @@ import React from 'react'
 import NavbarComponent from '../Components/NavbarComponent'
 import Publications from '../Components/publications'
 import { Container, Row, Col, Button , Card} from 'react-bootstrap'
+import Footer from '../Components/Footer'
 
 
 const PublicationsScreen = (props) => {
@@ -22,6 +23,7 @@ const PublicationsScreen = (props) => {
   </Container>
 
    <Publications/>
+   <Footer/>
 
     </div>
    )

@@ -68,7 +68,7 @@
     min-height: 420px;
     padding-top: 60px;
     color: white;
-   margin:0;
+    margin:0;
   
   }
 
@@ -76,9 +76,8 @@
     color:var(--greybg);
     font-family: "Poppins",sans-serif;
     font-size: 2rem;
-
-
   }
+
   .vert{
     color:var(--vert);
     font-size: 2rem;
@@ -93,13 +92,14 @@
     text-align: left;
   }
 
-    .bgfooter h5{
+    .bgfooter h5 {
     color:var(--vert);
-    border-left:4px solid var(--vert);
+    /* border-left:4px solid var(--vert); */
     margin-bottom: 2rem;
     font-family: 'Poppins', sans-serif;
+    text-align: center;
+    /* margin-left:10px */
     }
-
 
     .bgfooter ul li{
       list-style: none;
@@ -141,3 +141,12 @@
   }
 
   .searchInput{width:100%;}
+
+  .footer-newsletter input .searchInput .form-control{
+
+    background:var(--greybg) ;
+    border: none;
+    border:0.5px groove rgba(34, 32, 32, 0.5);
+    padding:1.3rem 2rem;
+
+  }

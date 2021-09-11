@@ -4,7 +4,6 @@ import {Link} from 'react-router-dom';
 import { signout } from '../Redux/Actions/authAction';
 import {useDispatch,useSelector} from 'react-redux'
 
-// import ModalInscri from './modalinscription';
 
 const NavbarComponent = () => {
   const auth = useSelector((state) => state.auth);
@@ -126,8 +125,8 @@ const NavbarComponent = () => {
     
 
       </Nav>
-      <Link className="ms-auto"  to="/Dashboard/Dashboardpublication" className="ms-auto"> Dashboard {userDonnées.fullName}  <img src={userDonnées.image}  className="img-responsive ms-2" style={{ borderRadius:"50%", height:"2rem", width:"2rem"}}/> </Link>
-  <a className="btn-success btn-sm" onClick={logout}>  <i class="fas fa-sign-out-alt fa-2x"  ></i> </a> 
+      <Link className="ms-auto"  to="/Dashboard/Dashboardpublication" > Dashboard {userDonnées.fullName}  <img src={"../image/temoignage1.webp"}  className="img-responsive ms-2" style={{ borderRadius:"50%", height:"2rem", width:"2rem"}}/> </Link>
+  <a  style={{color:"var(--vert)"}} onClick={logout}>  <i class="fas fa-sign-out-alt fa-2x"  ></i> </a> 
 
         </Navbar.Collapse>
     </Container>

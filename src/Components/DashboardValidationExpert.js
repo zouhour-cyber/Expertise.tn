@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react'
 import { deleteUSER, getUSER } from '../Redux/Actions/authAction';
 import {useDispatch,useSelector} from 'react-redux'
-import NavbarComponent from './NavbarComponent';
-import { Table , Row , Col, Button} from "react-bootstrap"
+import { Container, Table , Row , Col} from "react-bootstrap"
 import Sidebar from './Sidebar';
+import NavbarAdmin from './NavbarAdmin';
+import '../Screen/Dashboard.css'
 
 
 
@@ -27,12 +28,25 @@ const DashboardValidationExpert = () => {
  
   return(
     <div>
-     <Row className="d-flex justify-content-center"> 
-<Col md={2}>  <Sidebar/> </Col>
-<Col md={10}>
-     
+      <NavbarAdmin/>
+ <Container clasName="mt-5"> 
 
-      <Table striped hover className="text-center" >
+     <Row className="d-flex justify-content-center"> 
+  
+<Col md={2}>  <Sidebar/> </Col>
+<Col md={10}  >
+<div className="d-flex justify-content-left breadcrumbs mt-2" >  
+     <div > <a href ="/DashboardInterface" className="active">Dashboard /</a>Utilisateurs</div>
+     </div>
+  <Container > 
+<Row> <Col md={12}> 
+
+
+   
+
+     <div >
+       
+      <Table responsive="md" responsive="sm" striped hover className="text-center"  >
 <thead >
    <tr>
 
@@ -40,7 +54,6 @@ const DashboardValidationExpert = () => {
      <th>Adresse E-mail</th>
      <th>Téléphone </th>
      <th> Role</th>
-     <th> Compte créé le</th>
      <th> Action </th>
 
 
@@ -51,20 +64,26 @@ const DashboardValidationExpert = () => {
   {utilisateur.map(el => (
    <tr> 
     
-<td> {el.fullName} </td>
+<td> <img src={el.image} style={{ width:"2rem" , height:"2rem" , borderRadius:"50%"}} /> {el.fullName} </td>
 <td>{el.email}  </td>
 <td>{el.phone}  </td>
 <td> {el.role}</td>
-<td> {el.createdAt}</td>
-<td><Button variant="outline-dark"  className="mr-2 btn-sm" onClick={() => deleteUser(el._id)} ><i  class="fa fa-times"></i></Button> </td>
+<td><i class="fas fa-user-minus"   style={{fontSize:"1.2rem"}} onClick={() => deleteUser(el._id)} ></i></td>
 
    </tr>
   ))}
   </tbody>
  </Table>
+ 
+ </div>
+ </Col>
+ </Row>
+ </Container>
  </Col>
 
  </Row>
+   
+ </Container>   
     </div>
    )
 

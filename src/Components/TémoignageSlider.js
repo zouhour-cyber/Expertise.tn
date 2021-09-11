@@ -132,14 +132,14 @@ const Témoignage = (props) => {
     
      <div className="fun1"> 
     <h1> 1000 </h1>
-     <h5> Experts confirmés </h5>
+     <h5> Certified Experts </h5>
   
     </div>
     </Col>
     <Col sm={3}> 
     <div className="fun"> 
     <h1> 1000 </h1>
-     <h5> Cups of Coffee </h5>
+     <h5> Appointments </h5>
     </div>
     </Col>
     <Col sm={3}> 

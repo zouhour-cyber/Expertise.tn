@@ -123,22 +123,6 @@ export const getUSER= () => async (dispatch) =>  {
             console.log(error);
          }
 } 
-// //UPDATE EXPERT
-// export const validateExpert =(id, status)  => async dispatch =>{
-//     try{
-//      const res = await axios.put(`http://localhost:4000/expert/validate/${id}`, {status:'validé'}).then(res=>res.data).then(res=> window.location.reload())
-//         dispatch({
-//          type:"UPDATE_EXPERT",
-//          payload: res.data
-//      })
-//      console.log("superrr")
-
-//     }
-//      catch (error) {
-//      console.log(error);
-//    }
-//  }
-
 
 
   //UPDATE USER

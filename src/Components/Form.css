@@ -1,4 +1,4 @@
-input.form-control,.form-select{
+input.form-control,.form-select, .text-area .form-control{
     /* border-bottom: 2px solid var(--text); */
     /* background: transparent; */
     background-color: #EDF2F8; 
@@ -6,8 +6,7 @@ input.form-control,.form-select{
     border-radius: 0.3rem;
     height: 3rem;
       width:100% 
-    
-    
+     
 }
  .select.form-select{
 margin:1px 0px;

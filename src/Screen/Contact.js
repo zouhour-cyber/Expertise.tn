@@ -13,7 +13,7 @@ const Contact = (props) => {
 
 const dispatch = useDispatch()
 
- const [input,setInput]=useState({nom:"",email:"",message:"" })
+ const [input,setInput]=useState({fullName:"",email:"",message:"" })
 
 const hanleChange=(e)=>{
     const {name,value}=e.target
@@ -75,17 +75,17 @@ console.log("inpuuuuuuuuuuuut",input)
 </Col>
 <Col  md={6}  sm={10} xs={10} className="bg-form " > 
            
-                <Form className="" >
-                <Form.Group controlId="formBasicPassword">
-<Form.Control type="text" className="formcontact" placeholder="Votre nom et prénom"  name='nom'  onChange={hanleChange}   />
+   <Form className="" >
+   <Form.Group className="formcontact">
+<Form.Control type="text"  placeholder="Votre nom et prénom"  name='fullName'  onChange={hanleChange}   />
 </Form.Group>
 
-<Form.Group controlId="formBasicPassword">
-<Form.Control type="text" className="formcontact"  placeholder="Adresse e-mail"  name='email'   onChange={hanleChange}  />
+<Form.Group  className="formcontact">
+<Form.Control type="text"   placeholder="Adresse e-mail"  name='email'   onChange={hanleChange}  />
 </Form.Group>
 
-<Form.Group controlId="formBasicPassword">
-<Form.Control type="text"  as="textarea" style={{ height: '120px' }} className="formcontact" placeholder="Saisir un message"  name='message'   onChange={hanleChange}  />
+<Form.Group  className="formcontact">
+<Form.Control type="text"  as="textarea" style={{ height: '120px' }}  placeholder="Saisir un message"  name='message'   onChange={hanleChange}  />
 </Form.Group>
 
 

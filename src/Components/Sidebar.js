@@ -16,12 +16,12 @@ const Sidebar = (props) => {
     }}
 >
     <SideNav.Toggle />
-    <SideNav.Nav defaultSelected="home">
+    <SideNav.Nav defaultSelected="Dashboard">
 
         <NavItem eventKey="home">
         
             <NavIcon>
-            <Link to="/">   <i className="fa fa-fw fa-home" style={{ fontSize: '1.75em',color:'#f7f7f7'}} />
+            <Link to="/">   <i className="fa fa-fw fa-home" style={{ fontSize: '1.5em',color:'#f7f7f7'}} />
                </Link>
             </NavIcon>
            
@@ -31,9 +31,17 @@ const Sidebar = (props) => {
             </NavText>
         
         </NavItem>
+        <NavItem eventKey="Dashboard"  >
+            <NavIcon>
+               <Link to="/DashboardInterface"> <i class="fas fa-tachometer-alt" style={{ fontSize: '1.5em',color:'#f7f7f7'}} /> </Link> 
+            </NavIcon>
+            <NavText style={{color:'#f7f7f7'}}>
+                Dashboard
+            </NavText>
+        </NavItem>
         <NavItem eventKey="user"  >
             <NavIcon>
-               <Link to="/DashboardValidationExpert"> <i className="fa fa-user" style={{ fontSize: '1.75em',color:'#f7f7f7'}} /> </Link> 
+               <Link to="/DashboardValidationExpert"> <i class="fas fa-users" style={{ fontSize: '1.5em',color:'#f7f7f7'}} /> </Link> 
             </NavIcon>
             <NavText style={{color:'#f7f7f7'}}>
                 Utilisateurs
@@ -41,24 +49,17 @@ const Sidebar = (props) => {
         </NavItem>
         <NavItem eventKey="rendez-vous">
             <NavIcon >
-            <Link to="/Dashboard/RDVrecu">  <i className="fa fa-bell" style={{ fontSize: '1.75em',color:'#f7f7f7'}} />  </Link>
+            <Link to="/Dashboard/RDVrecu">   <i class="far fa-calendar-alt" style={{ fontSize: '1.75em',color:'#f7f7f7'}} ></i>  </Link>
             </NavIcon>
             <NavText style={{color:'#f7f7f7'}}>
             Rendez-vous
             </NavText>
         </NavItem>
-        <NavItem eventKey="rendez-vous">
-            <NavIcon>
-            <Link to="/Dashboard/DashboardContact">  <i className="far fa-comment-dots" style={{ fontSize: '1.75em',color:'#f7f7f7'}} />  </Link>
-            </NavIcon>
-            <NavText style={{color:'#f7f7f7'}}>
-            Contact
-            </NavText>
-        </NavItem>
+ 
 
         <NavItem eventKey="publication">
             <NavIcon>
-            <Link to="/Dashboard/Dashboardpublication">  <i class="fas fa-blog"  style={{ fontSize: '1.75em',color:'#f7f7f7'}}></i> </Link>
+            <Link to="/Dashboard/Dashboardpublication">  <i class="far fa-newspaper"  style={{ fontSize: '1.5em',color:'#f7f7f7'}}></i> </Link>
             </NavIcon>
             <NavText style={{color:'#f7f7f7'}}>
 
@@ -66,11 +67,27 @@ const Sidebar = (props) => {
               
             </NavText>
             
-            
+        </NavItem>
+        <NavItem eventKey="Contact">
+            <NavIcon>
+            <Link to="/Dashboard/DashboardContact">  <i class="far fa-comments" style={{ fontSize: '1.5em',color:'#f7f7f7'}} />  </Link>
+            </NavIcon>
+            <NavText style={{color:'#f7f7f7'}}>
+            Contact
+            </NavText>
+        </NavItem>
+
+
+        <NavItem eventKey="Newsletter">
+            <NavIcon>
+            <Link to="/AdminNEWSLETTER">  <i class="fas fa-at" style={{ fontSize: '1.5em',color:'#f7f7f7'}} />  </Link>
+            </NavIcon>
+            <NavText style={{color:'#f7f7f7'}}>
+           Newsletter
+            </NavText>
         </NavItem>
     </SideNav.Nav>
 </SideNav>
-
     </div>
    )
 

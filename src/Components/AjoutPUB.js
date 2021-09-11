@@ -1,10 +1,9 @@
 import React from 'react'
-import {Form,Button,Modal, Container, Table} from "react-bootstrap"
+import {Form,Button,Modal, Container, Table, Row, Col} from "react-bootstrap"
 import {useState, useEffect} from 'react';
 import {useDispatch,useSelector} from 'react-redux'
 import { ModalEdit } from './ModalEdit';
 import {addPUBApi, getPUB, deleteItem} from '../Redux/Actions/PUBActions'
-import NavbarExpert from './NavbarExpert';
 
 const AjoutPUB = () => {
 
@@ -50,35 +49,35 @@ setShow(false)
   return(
     <div>
     <div className='container mt-5'>
- <Button variant="primary" onClick={handleShow}>
+  
+<Button  className="bg-blue" variant="dark" onClick={handleShow}>
    Ajouter une publication
 </Button>
 
-<Modal show={show} onHide={handleClose}>
-<Modal.Header closeButton>
-<Modal.Title className="title-modal">Ajouter une publication</Modal.Title>
+<Modal show={show} onHide={handleClose}  size="lg">
+<Modal.Header className="bg-vert2" closeButton>
+<Modal.Title className="title-modal "><h5>Ajouter une publication </h5></Modal.Title>
 </Modal.Header>
 <Modal.Body>
+  <Container>  
+    <Row className="d-flex justify-content-center my-3"> <Col md={10}> 
 <Form >
-<Form.Group controlId="formBasicEmail">
-<Form.Label>Titre </Form.Label>
-<Form.Control type="text" placeholder="titre" name='titre' onChange={hanleChange} />
-
-</Form.Group><Form.Group controlId="formBasicPassword">
-<Form.Label>Description</Form.Label>
-<Form.Control type="text" placeholder="enter description"  name='description' onChange={hanleChange}  />
+<Form.Group className="mt-3">
+<Form.Control type="text" placeholder="Titre de la publication ..." name='titre' onChange={hanleChange} />
 </Form.Group>
 
-
-<Form.Group controlId="formBasicPassword">
-<Form.Label>image</Form.Label>
+<Form.Group className="mt-3">
 <Form.Control type="text" placeholder="enter image"  name='image' onChange={hanleChange}   />
 </Form.Group>
 
+<Form.Group className="mt-3 " >
+<Form.Control  as="textarea" className="form-control" rows={4} type="text" placeholder="Ajouter une description"  name='description' onChange={hanleChange}  />
+</Form.Group>
 
-
-<Button className="btn-block" onClick={addNewPUBLIC}>Ajouter</Button>
+<Button className="bg-blue w-100 mt-4" onClick={addNewPUBLIC}>Ajouter</Button>
 </Form>
+</Col></Row>
+</Container>
 </Modal.Body>
 
 
@@ -87,12 +86,12 @@ setShow(false)
 
 <Container className="mt-3">
 
-<Table  hover className="text-center" >
+<Table style={{fontSize:"14px"}} responsive="md" responsive="sm" hover className="text-center" >
 <thead >
    <tr>
-     <th>Image</th>
-     <th>Titre</th>
-     <th>Description</th>
+     <th style={{width:"100px"}}>Image</th>
+     <th style={{width:"180px"}}>Titre</th>
+     <th style={{width:"400px"}}>Description</th>
      <th>Actions </th>
 
 
@@ -102,11 +101,11 @@ setShow(false)
  <tbody>
  {datas.map(el => (
    <tr>
-     <td> <img src={el.image} style={{ width: '10rem'}} className="imagetable"/> </td>
-     <td> <p> {el.titre}</p> </td>
-     <td> <p> {el.description} </p></td>
+     <td style={{width:"180px"}}> <img src={el.image} style={{ width: '10rem'}} className="imagetable"/> </td>
+     <td style={{width:"100px"}}> <p> {el.titre}</p> </td>
+     <td style={{width:"400px"}}> <p> {el.description} </p></td>
 
-     <td><Button variant="dark"  className="mr-2 btn-sm"  onClick={() => deleteItemm(el._id)}
+     <td><Button variant="dark"  className="me-2 btn-sm"  onClick={() => deleteItemm(el._id)}
  ><i  class="fa fa-times"></i></Button> 
    <ModalEdit  el={el}  id={el._id} />
    </td>

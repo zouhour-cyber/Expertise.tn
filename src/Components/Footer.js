@@ -1,55 +1,70 @@
+import { useState } from 'react';
 import {Button ,Row, Col, FormControl, Form} from 'react-bootstrap'
+import { useDispatch } from 'react-redux';
 import {Link} from 'react-router-dom';
+import { addNewsletter } from '../Redux/Actions/NewsletterAction';
 import './Footer.css';
 
 function Footer() {
+    const dispatch = useDispatch()
+
+    const [input,setInput]=useState({email:"" })
+   
+   const hanleChange=(e)=>{
+       const {name,value}=e.target
+       setInput({
+           ...input,
+           [name]:value
+       })
+       console.log("input",input)
+   }
+   
+   //ADD Menu 
+   const addNews=()=>{
+   dispatch (addNewsletter(input.email)) 
+   console.log("inpuuuuuuuuuuuut",input)
+   }
+
     return(
 <div className="bgfooter">
 <Row >
     <Col md={3} xs={12} sm={12} className="mt-5">
 
-   <h4 className="logo mb-4"> <span className="logoVert"> Find.</span>Expert</h4>
-      {/* <img
-        src="image/logo-dark.webp" color="#FF5A5F"
-        width="100"
-      
-        className=""
-        alt="moviehunter"
-      /> */}
-
-      <div className="mt-5 justify-text-left">  <span className="logoVert"> Find.</span>Expert, réunit les experts de l'agriculture, de l’agro-industrie & de productions et santé animales.</div>
+   <h4 className="logo mb-3 justify-text-left"> <span className="logoVert"> Find.</span>Expert</h4>
+   
+   <div className="mt-4 justify-text-left">  <span className="logoVert"> Find.</span>Expert, réunit les experts de l'agriculture, de l’agro-industrie & de productions et santé animales.</div>
     
     </Col>
-    {/* <Col md={} > </Col> */}
     <Col md={3} xs={12} sm={12} className="mt-5" >
-    <h5> Liens utiles</h5>
+    <h5 > Liens utiles</h5>
     <ul> 
-    {/* <div className="tiretbottom"> </div> */}
-    <li> <Link to="/Expert">Nos experts</Link> </li>
-   <li> <Link to="/">Inscription</Link>  </li>
-   <li>  <Link to="/Actualités">Actualités </Link> </li>
-   </ul>
+    <li> <Link to="/Register"> Inscription expert </Link></li>
+    <li> <Link to="/Expert"> Rendez-vous </Link> </li>
+    <li> <Link to="Contact"> Contact</Link> </li>
+</ul>
     
     </Col>
     <Col md={3} xs={12} sm={12} className="mt-5">
-    <h5>Mon compte</h5>
-    {/* <div className="tiretbottom"> </div> */}
- <ul> 
-    <li> <Link to="/RegisterExpert"> Inscription expert </Link></li>
-    <li> <Link to="#"> Rendez-vous </Link> </li>
-    <li> <Link to="#"> Consulting </Link> </li>
-</ul>
+    <h5 >Mon compte</h5>
+    <ul> 
+    <li> <Link to="/Expert">Nos experts</Link> </li>
+   <li> <Link to="/Register">Inscription</Link>  </li>
+   <li>  <Link to="/signin">Connexion </Link> </li>
+   </ul>
+
     </Col>
     <Col md={3} xs={12}  sm={12}  className="mt-5">
 
-    <h5>Rejoignez-nous</h5>
-    <Form className="d-flex">
+    <h5 >Rejoignez-nous</h5>
+    <Form className="d-flex footer-newsletter mt-5">
       <FormControl
         type="search"
         placeholder="Adresse e-mail"
-        className="mr-2 searchInput"
+        className="mr-2 "
+        name="email"
+        onChange={hanleChange}  
       />
-      <Button  className="newletter-btn"  > <i class="fas fa-paper-plane"></i> </Button>
+      <Button  className="newletter-btn" onClick={addNews}  > <i class="fas fa-paper-plane"></i> </Button>
     </Form>
     
     

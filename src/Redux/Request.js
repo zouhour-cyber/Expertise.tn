@@ -56,3 +56,10 @@ export const deletecontact=(id) => {
   Axios.delete(`http://localhost:4000/contact/deleteCONTACT/${id}`).then(res=>res.data).then(res=> window.location.reload());
 
 }
+
+//delete Newsletter
+export const deleteNews=(id) => {
+  Axios.delete(`http://localhost:4000/newsletter/deleteNEWSLETTER/${id}`).then(res=>res.data).then(res=> window.location.reload());
+
+}
+

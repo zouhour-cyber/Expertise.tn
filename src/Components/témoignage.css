@@ -71,7 +71,7 @@
 
   .fun{
     padding:2.2rem;
-
+    height:10rem;
     background-color:rgba(219, 216, 216, 0.3);
     color:var(--blue);
     border:1px solid var(--text);
@@ -85,6 +85,8 @@
     padding:1.7rem;
     background-color:rgba(19, 19, 37, 0.4);
     color:var(--greybg);
+    height:10rem;
+
 
   
   
