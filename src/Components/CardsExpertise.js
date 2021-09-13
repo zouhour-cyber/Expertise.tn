@@ -11,7 +11,7 @@ const CardsExpertise = (props) => {
   <Row>
   <Col md={4}  sm={10}  xs={10}> 
   
-  <Card className="Cardhover" style={{ width: '22em' ,height:"30rem", padding:"1rem" }}>
+  <Card className="Cardhover" style={{ width: '21em' ,height:"27rem", padding:"0.5rem" }}>
     <Card.Body>
       <Card.Title><i className="fas fa-utensils fa-3x iconservice"></i> </Card.Title>
       <Card.Subtitle className="my-4 text-blue"> Agroalimentaire</Card.Subtitle>
@@ -25,12 +25,12 @@ const CardsExpertise = (props) => {
   
   <Col md={4} sm={10}  xs={10}> 
   
-  <Card className="Cardhover1" style={{ width: '22rem' ,height:"30rem" , padding:"1rem"}}>
+  <Card className="Cardhover1" style={{ width: '21rem' ,height:"27rem" , padding:"0.5rem"}}>
     <Card.Body>
       <Card.Title> <i className="fas fa-apple-alt fa-3x iconservice"></i> </Card.Title>
-      <Card.Subtitle className="my-4 text-blue">Agriculture </Card.Subtitle>
+      <Card.Subtitle className="my-4 text-blue">Productions </Card.Subtitle>
       <Card.Text className="text">
-      Amélioration des techniques de culture, Nos ingénieurs agronomes peuvent vous aider face à autant de contraintes que de risques potentiels en production agricole.
+      Amélioration des techniques de culture, planification de la fertilisation, diagnostic des maladies et traitement phytosanitaire ...
       </Card.Text>
       
     </Card.Body>
@@ -39,12 +39,12 @@ const CardsExpertise = (props) => {
   
   <Col md={4} sm={10}  xs={10}> 
   
-  <Card  className="Cardhover" style={{ width: '22rem' ,height:"30rem", padding:"1rem" }}>
+  <Card  className="Cardhover" style={{ width: '21rem' ,height:"27rem", padding:"0.5rem" }}>
     <Card.Body>
       <Card.Title ClassName="mb-5"> <i className="fas fa-paw fa-3x iconservice"></i> </Card.Title>
-      <Card.Subtitle className="my-4 text-blue">Productions animales et santé </Card.Subtitle>
+      <Card.Subtitle className="my-4 text-blue">Productions animales</Card.Subtitle>
       <Card.Text className="text">
-    Les productions animales nécessitent des connaissances de plus en plus spécialisées auxquelles les ing prod animale sont en mesure de répondre.
+    Amélioration des techniques d'élevages,engraissement, diagnostic des maladies et suivi régulier par un vétérinaire...
       </Card.Text>
       
     </Card.Body>

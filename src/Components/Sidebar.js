@@ -10,12 +10,13 @@ import { Link, Route, Router } from 'react-router-dom';
 const Sidebar = (props) => {
   return(
     <div>
+        
 <SideNav
     onSelect={(selected) => {
         // Add your code here
     }}
 >
-    <SideNav.Toggle />
+    <SideNav.Toggle  expanded/>
     <SideNav.Nav defaultSelected="Dashboard">
 
         <NavItem eventKey="home">
@@ -79,6 +80,12 @@ const Sidebar = (props) => {
 
 
         <NavItem eventKey="Newsletter">
+            <NavIcon>
+            <Link to="/AdminNEWSLETTER">  <i class="fas fa-at" style={{ fontSize: '1.5em',color:'#f7f7f7'}} />  </Link>
+            </NavIcon>
+            <NavText style={{color:'#f7f7f7'}}>
+           Newsletter
+            </NavText>
             <NavIcon>
             <Link to="/AdminNEWSLETTER">  <i class="fas fa-at" style={{ fontSize: '1.5em',color:'#f7f7f7'}} />  </Link>
             </NavIcon>

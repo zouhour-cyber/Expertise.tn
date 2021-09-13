@@ -44,7 +44,6 @@ const Publications = () => {
     return (
     
     <div className="mt-5">
-            <h1>Liste des Publications</h1>
 
      <Container className="d-flex my-5 ">
         <Row className="d-flex justify-content-between"> 
@@ -52,23 +51,30 @@ const Publications = () => {
         {datas.map((el,key ) => (
              <>
           <Col md={11} sm={11} xs={11} className="my-3">
-           <Card style={{height:"40rem"}} className="pubCard" key={key}>
+          <Card style={{height:"35rem"}} className="pubCard" key={key}>
              <Card.Img variant="top" src={el.image} className="cardimg"   style={{ height: '20rem' }} />
              <Card.Body> 
               
-            <div className="title mt-1"> <h5>  {el.titre} </h5> </div> 
+            <div className="title mt-1"> <h5 style={{color:"var(--blue)"}}>  {el.titre} </h5> </div> 
+            
+             <div  style={{marginLeft:"-1rem"}} className="mt-4"> <a href="#" class="icon-link  "><i class="fa fa-pencil-square-o"></i> Mohaned Hamza</a>
+            <a class="icon-link " > <i class="far fa-clock"></i> 10/09/2021  </a>  </div> 
                <Card.Text >
-               <div className="description-text"> {el.description}  </div>
+               <div className="description-text mt-2"> {el.description.slice(0,96)}  </div>
                   
                </Card.Text>
                <div className="d-flex justify-content-between"> 
-               <div> 14/08/2021</div> 
+
              
-              <Link to="/OnePublication" >  <a className="text-success" onClick={() => {getOnePUB(el._id)} } > Lire plus</a>  </Link>
+              {/* <Link to="/OnePublication" >  <a className="text-success" onClick={() => {getOnePUB(el._id)} } > Lire plus</a>  </Link> */}
+              <Link to="/OnePublication" class="btn1 btn--with-icon" onClick={() => {getOnePUB(el._id)} }  ><i class="btn-icon fa fa-long-arrow-right"></i>READ MORE</Link>
 
                </div>
              </Card.Body>
            </Card>
+           
+          
+          
            </Col>
              
            </>

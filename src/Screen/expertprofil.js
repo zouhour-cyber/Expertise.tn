@@ -6,12 +6,15 @@ import Footer from '../Components/Footer';
 import '../Components/Footer.css';
 import { addRDVApi } from '../Redux/Actions/RDVactions';
 import { getUserbyId } from '../Redux/Actions/authAction';
+import { Redirect } from 'react-router-dom';
 const ExpertProfil = (id) => {
   const dispatch = useDispatch()
   // const AfficheExpert = useSelector((state) => state.NosEXPERTS.NosexpertsData);
  
   const userDonnées = useSelector((state) => state.auth.user);
   const userData = useSelector((state) => state.utilisateur.userData)
+  const auth = useSelector(state =>state.auth)
+
  
   useEffect(() => {
    dispatch(getUserbyId(id))
@@ -35,6 +38,9 @@ const addNewRDV=()=>{
   console.log("inpuuuuuuuuuuuut RDV",input)
   }
   
+  if(!auth.authenticate){
+    return <Redirect to={`/signin`} />
+  }
 
   return(
     <div>
@@ -42,47 +48,56 @@ const addNewRDV=()=>{
 
       <div className="my-5"> 
         <Container className="mt-5" fluid>
-          <Row className="mt-2">
-            <Col md={8} sm={12} xs={12}>
-            <div className="bg-vert2 p-2 my-5">   <> Info Général</></div>
-            <Row className="d-flex justify-content-center ">
+          <Row className="d-flex justify-content-evenly mt-2" >
+            <Col md={7} sm={12} xs={12} className=" mt-2" style={{width:"790px"}} >
+              <div className="info-général my-5"> 
+            <div className="bg-vert2 p-2 ">   <> Info Général</></div>
+            <Row className="info d-flex justify-content-evenly  ">
               <Col md={4} sm={12} xs={12}> 
-              <div> <img src={userData.image}   style={{width:"280px",height:"340px", borderRadius:"10px" }}/>  </div>
+              <div> <img src={userData.image}   style={{width:"270px",height:"340px", borderRadius:"10px" }}/>  </div>
               </Col>
               <Col md={6} sm={12} xs={12} > 
-              <div className="d-flex flex-column align-items-start ms-5 donéexpert" >
-                <span > -{userData.Spécialité}</span>  
-              <div className=""> {userData.fullName} </div>
-              <div className="my-2"> <Badge bg="success"> 700 views </Badge>  <Badge bg="blue"> 500 consultations </Badge>
+              <div className="d-flex flex-column align-items-start  donéexpert" >
+                <span style={{color:"var(--vert)", fontWeight:"600"}} > - Expert en {userData.Spécialité}</span>  
+              <div className="" style={{fontSize:"26px", color:"var(--blue)"}}> {userData.fullName} </div>
+              <div className="my-2"> <Badge bg="success"  style={{fontSize:"11px",padding:"0.4rem"}} > 700 views </Badge>  <Badge bg="blue" style={{fontSize:"11px",padding:"0.4rem"}} > 500 consultations </Badge>
               </div>
              <>
-              <div> Spécialité: {userData.Spécialité} </div>
-              <div> Adresse e-mail: {userData.email} </div>
-              <div> Numéro de téléphone :{userData.phone} </div>
-              <div> Expérience: {userData.Description} </div>
+              <div> <span style={{fontWeight:"600"}}>   Spécialité:</span> {userData.Spécialité} </div>
+              <div> <span style={{fontWeight:"600"}}> Adresse e-mail: </span> {userData.email} </div>
+              <div> <span style={{fontWeight:"600"}}> Numéro de téléphone: </span>{userData.phone} </div>
+              <div><span style={{fontWeight:"600"}}> Expérience:</span> {userData.Description} </div>
               </>
+          
               </div> 
               </Col>
+
+              <Col md={12} className="mt-5 px-5">
+              <hr/>
+              <div className="d-flex">  
+             <div>  <i class="fas fa-money-bill-wave fa-2x me-3"  style={{ color:"var(--blue)"}} ></i>  </div>
+              <div><span style={{fontWeight:"400" , fontSize:"21px", color:"var(--blue)"}}>  Tarifs:  </span>        <div style={{fontSize:"18px"}} >  60 dt/consultation</div> </div> 
+       
+              </div>
+              
+               </Col>
               </Row>
+              </div>
             </Col>
 
-            <Col md={4} sm={10} xs={10}  > 
-            <Form  className="Sidebar-RDV my-5" >   
-            <div className="bg-vert2 p-3 mb-4 asideRDV " > Réserver un rendez-vous</div>
-            <Form.Label >  <h6> Choisissez la date </h6>  </Form.Label>
-            <Form.Control  type="date"  name="date" onChange={hanleChange}  />
-            <Form.Label  className="mt-4" >  <h6> Choisissez l'heure </h6>  </Form.Label>
+            <Col md={3} sm={10} xs={10} style={{width:"380px", marginTop:"3.5rem"}} > 
+            <Form  className="Sidebar-RDV " >   
+            <div className="bg-vert2 p-3 " > Réserver un rendez-vous</div>
+            <div  className="asideRDV">
+            <Form.Label >  <div> Choisissez la date </div>  </Form.Label>
+            <Form.Control className="mt-3" type="date"  name="date" onChange={hanleChange}  />
+            <Form.Label  className="my-3" >  <div> Choisissez l'heure </div>  </Form.Label>
 
-            <Form.Control  type="time" name="heure" onChange={hanleChange}  />
-            {/* <Form.Label >  <h6> id expert </h6>  </Form.Label>
-
-            <Form.Control  type="text" name="idExpert" defaultValue={userData._id}  onChange={hanleChange}  />
-             */}
-            {/* <Form.Label >  <h6> id user</h6>  </Form.Label>
- 
-            <Form.Control  type="text" name="idUser" defaultValue={userDonnées._id} onChange={hanleChange}  />
-             */}
-            <Button variant="outline-dark" size="block" className="mt-4"  onClick={addNewRDV} > Réserver maintenant </Button>
+            <Form.Control className="mt-2" type="time" name="heure" onChange={hanleChange}  />
+     
+            <Button variant="dark" size="block" className="mt-5 w-100 bg-blue"  onClick={addNewRDV} > Réserver maintenant </Button>
+           
+            </div>
             </Form>
 
 

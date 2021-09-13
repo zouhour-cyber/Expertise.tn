@@ -1,10 +1,11 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { deleteUSER, getUSER } from '../Redux/Actions/authAction';
 import {useDispatch,useSelector} from 'react-redux'
-import { Container, Table , Row , Col} from "react-bootstrap"
+import { Container, Table , Row , Col, FormControl, Form} from "react-bootstrap"
 import Sidebar from './Sidebar';
 import NavbarAdmin from './NavbarAdmin';
 import '../Screen/Dashboard.css'
+import ModalEditUser from '../Screen/ModalEditUser';
 
 
 
@@ -25,6 +26,11 @@ const DashboardValidationExpert = () => {
   dispatch (deleteUSER(id) )
   console.log(deleteUSER(id))
 }
+//handle search bar
+const [search, setSearch] = useState("");
+const handelChange=(e)=>{
+   setSearch(e.target.value);
+} 
  
   return(
     <div>
@@ -38,22 +44,33 @@ const DashboardValidationExpert = () => {
 <div className="d-flex justify-content-left breadcrumbs mt-2" >  
      <div > <a href ="/DashboardInterface" className="active">Dashboard /</a>Utilisateurs</div>
      </div>
-  <Container > 
+  <Container fluid > 
 <Row> <Col md={12}> 
 
+   {/* <div>
+     <Form>
+   <FormControl
+        type="search"
+        placeholder="Expert / Spécialité ..."
+        className="searchInput"
+        aria-label="Search"
+        onChange={handelChange}
+      />
+      </Form>
+   </div>
+    */}
 
-   
-
-     <div >
+     <>
        
-      <Table responsive="md" responsive="sm" striped hover className="text-center"  >
+      <Table responsive="sm" responsive="xs" striped hover >
 <thead >
    <tr>
 
      <th>Nom et prénom</th>
-     <th>Adresse E-mail</th>
+     <th style={{width:"100px"}}> E-mail</th>
      <th>Téléphone </th>
-     <th> Role</th>
+     <th style={{width:"5px"}}> Role</th>
+     <th style={{width:"5px"}}> Status</th>
      <th> Action </th>
 
 
@@ -61,21 +78,33 @@ const DashboardValidationExpert = () => {
  </thead>
 
   <tbody>
-  {utilisateur.map(el => (
+  { utilisateur.filter((el) => {
+
+if (
+  (el.role.toLowerCase().includes(search.toLowerCase())) ||
+  (el.Spécialité.toLowerCase().includes(search.toLowerCase()))||
+  (el.fullName.toLowerCase().includes(search.toLowerCase()))
+) {
+  return el;
+}
+})
+  
+  .map(el => (
    <tr> 
     
-<td> <img src={el.image} style={{ width:"2rem" , height:"2rem" , borderRadius:"50%"}} /> {el.fullName} </td>
-<td>{el.email}  </td>
+<td style={{width:"50px"}}> <img src={el.image} style={{ width:"2rem" , height:"2rem" , borderRadius:"50%"}} /> <br/> {el.fullName} </td>
+<td  style={{width:"100px"}}>{el.email}  </td>
 <td>{el.phone}  </td>
-<td> {el.role}</td>
-<td><i class="fas fa-user-minus"   style={{fontSize:"1.2rem"}} onClick={() => deleteUser(el._id)} ></i></td>
+<td style={{width:"5px"}}> {el.role}</td>
+<td style={{width:"5px"}}> {el.status} </td>
+<td style={{width:"100px"}}><i class="fas fa-user-minus"   onClick={() => deleteUser(el._id)} ></i>   <ModalEditUser  el={el}  id={el._id}/> </td>
 
    </tr>
   ))}
   </tbody>
  </Table>
  
- </div>
+ </>
  </Col>
  </Row>
  </Container>

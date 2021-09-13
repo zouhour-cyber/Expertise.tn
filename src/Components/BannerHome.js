@@ -13,7 +13,7 @@ const BannerHome = (props) => {
   <Row> 
   <Col md={6} xs={10} className="mt-4">
    
-   <Button variant="success"> Demander un rendez-vous !! </Button>
+   <Button variant="success" href='/Expert'> Découvrez nos experts !! </Button>
 
 </Col>
 </Row>

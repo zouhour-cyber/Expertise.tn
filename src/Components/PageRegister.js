@@ -3,9 +3,13 @@ import RegisterUserForm from '../authScreen/userRegister'
 import {Container,Row, Col,  Button , Badge , Form} from 'react-bootstrap';
 import NavbarComponent from './NavbarComponent';
 import Footer from './Footer';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 const PageRegister = (props) => {
+  const auth = useSelector(state =>state.auth)
+
+
   return(
     <div   >
         <NavbarComponent/>

@@ -1,7 +1,7 @@
 import {React, useEffect }from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import {getPUB, getPublicationById} from '../Redux/Actions/PUBActions'
-import {Container,Row, Col, Card } from 'react-bootstrap';
+import {Container,Row, Col, Card, Image } from 'react-bootstrap';
 import '../Components/card.css'
 import NavbarComponent from '../Components/NavbarComponent';
 
@@ -29,27 +29,25 @@ const OnePublication = (props) => {
       {/* <div className="section-padding"> </div> */}
       <Container  style={{marginTop:"7rem"}}>
          <Row className="d-flex justify-content-around"> 
-           <Col md={8} sm={10} xs={10} className="my-5" style={{backgroundColor:"white", borderRadius:"7px"}}>
+           <Col md={8} sm={10} xs={10} className="my-5 " style={{backgroundColor:"white", borderRadius:"5px"}}>
                <div className="py-4 px-0">
            <div>
-             <Card.Img variant="top" src={datas.image}    style={{width:"700px" ,height: '385px'}} />
+             <Image variant="top" src={datas.image}    style={{width:"700px" ,height: '385px', borderRadius:"7px"}} fluid />
              <Card.Body  className="pubCard "> 
               
-            <div className="title mt-1"> <h5>  {datas.titre} </h5> </div> 
+            <div className="title mt-1"> <h5 style={{color:"var(--blue)"}}>  {datas.titre} </h5> </div> 
+            <div  style={{marginLeft:"-1rem"}} className="mt-4"> <a href="#" class="icon-link  "><i class="fa fa-pencil-square-o"></i> Mohaned Hamza</a>
+            <a class="icon-link " > <i class="far fa-clock"></i> 10/09/2021  </a>  </div> 
                <Card.Text >
-               <div className="description-text"> {datas.description}  </div>
+               <div className="description-text mt-2"> {datas.description}  </div>
                   
                </Card.Text>
-               <div className="d-flex justify-content-between"> 
-               <div> 14/08/2021</div> 
-              
-
-               </div>
+           
              </Card.Body>
            </div>
            </div>
            </Col>
-           <Col md={4} className="RecentPost"> 
+           <Col md={4} sm={10} xs={10} className="RecentPost"> 
              <h6 className="mt-5"> Recent Post </h6>
              <hr/>
 

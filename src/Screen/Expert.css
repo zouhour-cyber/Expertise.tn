@@ -11,67 +11,83 @@
 
 
 .bannerexpert{
-    background-image:linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url("../imagepub/expert.jpg") ;
-    background-position: center;
+    background-image:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url("../imagepub/expert.jpg") ;
+    background-attachment: fixed;
+    margin-top:1rem;
+    background-position: bottom;
     background-repeat: no-repeat;
     background-size: cover;
-    padding-top:1rem;
-    font-weight: 500;
-    min-height: 360px;
-  
+    min-height: 620px;
+    position: relative;
+    box-shadow: 0 13px 27px -5px hsla(240, 30.1%, 28%, 0.25), 0 8px 16px -8px hsla(0, 0%, 0%, 0.3), 0 -6px 16px -6px hsla(0, 0%, 0%, 0.03);
+
    }
 
    .max-height1{
-    margin-top:-2.5rem;
-    color:black;
- 
+    position: absolute;
+    margin-top: 12%;
+    padding: 2.5rem 3rem ;
+    border-radius: 0.8rem;
+    color:white
+
   }
 
-   .searchInput{
+  .expert h1,h5{
+    color:var(--greybg);
+    }
 
+   .searchInput{
+   
     border-bottom-left-radius: 1.6rem;
-    padding:1rem;
+    padding:1.2rem;
+    width:auto;
+    padding: 1.7rem 1rem;
+
    }
 
 
 
    .btn-select{
-    border-top-right-radius: 1.6rem;
-    background-color: var(--vert);
-    color:var(--blue);
-    font-weight:600;
+    border-top-right-radius: 1rem;
+    background-color: var(--blue);
+    color:var(--text);
     width:auto;
+    padding-left: 0.5rem;
 
    }
 
-   .expert{
-    padding: 3rem 2rem ;
-    background-color: #092c3f;
-    border-radius: 1.6rem;
-   
-   }
-
-
-h1{
-color:var(--greybg);
-}
  
 
+
+.info-général{
+  border: 1px solid rgb(231, 231, 231);
+  box-sizing: border-box;
+  background-color: white;
+
+}
+ 
+.info{
+    margin:4rem 0rem;
+    text-align: left;
+}
+
 .Sidebar-RDV{
-    border: 1px solid rgb(235, 230, 230);
-    /* box-shadow: 0 13px 27px -5px hsla(240, 30.1%, 28%, 0.25), 0 8px 16px -8px hsla(0, 0%, 0%, 0.3), 0 -6px 16px -6px hsla(0, 0%, 0%, 0.03);
-    box-sizing: border-box; */
-    height:75vh;
-    padding:0px;
-    /* position:sticky;
-    top:20; */
+    border: 1px solid rgb(231, 231, 231);
+    background-color: white;
+
+    height:81vh;
+
+    
+   
 }
 .asideRDV{
     border-radius: 5px;
     font-family: 'Poppins', sans-serif;
     font-weight:bold;
-    font-size:21px;
-     
+    font-size:15px;
+    padding:3rem 2rem;
+    text-align: left;
+
 }
 
 .bg-vert2{
@@ -80,13 +96,13 @@ color:var(--greybg);
     color:var(--blue);
     font-family: 'Poppins', sans-serif;
     font-weight:bold;
-    font-size:21px;
+    font-size:19px;
 
 }
 
 .donéexpert{ 
     font-family: 'Poppins', sans-serif;
-    font-size:16px;
+    font-size:15px;
     line-height: 2.5rem;
     font-weight: bolder;
 

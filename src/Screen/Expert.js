@@ -25,6 +25,7 @@ const ExpertScreen = () => {
    const [search, setSearch] = useState("");
    const handelChange=(e)=>{
       setSearch(e.target.value);
+
    } 
 
    const getOneEXPERT=(id) =>{
@@ -35,29 +36,28 @@ const ExpertScreen = () => {
 <NavbarComponent/>
 
 <Container className="bannerexpert" fluid>
-
-</Container>
 <Container>
-        <Row className="max-height1 d-flex justify-content-center text-center">  
- <Col md={9}>       
+        <Row className=" d-flex justify-content-center text-center">  
+ <Col md={9} sm={12} xs={12} className="max-height1">       
 <Row className="expert d-flex justify-content-center"> 
-
-<Col className="mb-5" md={12} xs={12}> <h1> Rechercher un expert </h1>   </Col> 
+<Col md={12} xs={12} className="my-5">  <h1> Rechercher un expert </h1> 
+ <h5 className="my-3"> Les experts agronomes de différents spécialités sont réunis ici !! </h5>
+</Col>
 <Col md={12} xs={12}> 
-<Form className="d-flex"> 
+<Form className="d-flex justify-content-evenly"> 
 
       <FormControl
         type="search"
         placeholder="Expert / Spécialité ..."
-        className="searchInput"
+        className="searchInput w-100"
         aria-label="Search"
         onChange={handelChange}
       />
 
       <select className="btn-select" aria-label="Default select example"  onChange={handelChange}
   >
-  <option selected> Spécialité</option>
-  <option value="1">céréaliculture </option>
+  <option > Spécialité</option>
+  <option value="1">Céréaliculture </option>
   <option value="2">Oléiculture</option>
   <option value="3">Arboriculture</option>
   <option value="4">Horticulture</option>
@@ -75,7 +75,9 @@ const ExpertScreen = () => {
                </Row>
                   
                 </Container>
-<Container>
+</Container>
+
+<Container className="my-5">
 
 <div className=" d-flex justify-content-center text-center" >
   <Row className=""> 
@@ -87,7 +89,9 @@ const ExpertScreen = () => {
       (el.role === "expert" && search === "") ||
       (el.role === "expert" && el.Spécialité.toLowerCase().includes(search.toLowerCase()))
     ) {
-      return el;
+      if(el.role === "expert" && el.status==="confirmé"){
+        return el;
+      }
     }
   })
 .map((el) => ( 

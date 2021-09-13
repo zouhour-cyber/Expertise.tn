@@ -10,9 +10,10 @@ const PublicationsScreen = (props) => {
     <div>
 <NavbarComponent/>
 <Container className="bannerpub" fluid>
-      <Row className="d-flex  mx-auto">
-      <Col md={6} xs={10} className="max-height text-justify" >
-        <h4 className="text-banner-actualité"> Découvrir nos Actualités </h4>
+      <Row className="d-flex justify-content-start">
+      <Col md={6} xs={10} className="text-banner-actualité" >
+        <h2 className=""> Découvrir nos Actualités </h2>
+        <h5>  Nos experts publient plein d'articles informatives et riches pour vous !!</h5>
         
     <Row> 
     

@@ -18,9 +18,9 @@ const NavbarAdmin = (props) => {
   return(
     <div>
 
-<Container className="bg-blue py-2" fluid> 
+<Container className="bg-blue "fluid> 
      <div className="d-flex align-items-center ">
- <div className="mx-2 ms-auto" style={{color:"white", fontWeight:"bolder"}}  to="/Dashboard/Dashboardpublication" > Dashboard {userDonnées.fullName}  <img src={"../image/temoignage1.webp"}  className="img-responsive ms-2" style={{ borderRadius:"50%", height:"2rem", width:"2rem"}}/> </div>
+ <div className="mx-2 ms-auto" style={{color:"white", fontWeight:"bolder"}}  style={{fontSize:"17px", color:"white"}}  to="/Dashboard/Dashboardpublication" > Dashboard {userDonnées.fullName}  <img src={"../image/temoignage1.webp"}  className="img-responsive ms-2" style={{ borderRadius:"50%", height:"2rem", width:"2rem"}}/> </div>
   <a style={{color:"var(--vert)"}}  onClick={logout}>  <i class="fas fa-sign-out-alt fa-2x"  ></i> </a> 
   {/* <Link  className="btn btn-outline-success btn-sm me-2" onClick={logout}>   Déconnexion  </Link> */}
 

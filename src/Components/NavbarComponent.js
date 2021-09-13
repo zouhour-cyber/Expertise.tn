@@ -140,7 +140,7 @@ const NavbarComponent = () => {
     <div> 
       
 
- {auth.authenticate && user.role === "expert" ? RenderLoggedInLinksexpert() : auth.authenticate && user.role === "user"? RenderLoggedInLinksuser():auth.authenticate && user.role === "admin" ? RenderDashboardAdmin() :RenderNotLoggedLinks()}
+ {auth.authenticate && user.role === "expert"  && user.status==="confirmé" ? RenderLoggedInLinksexpert() : auth.authenticate && user.role === "user"? RenderLoggedInLinksuser():auth.authenticate && user.role === "admin" ? RenderDashboardAdmin() :RenderNotLoggedLinks()}
 
 
     </div>

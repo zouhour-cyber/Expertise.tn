@@ -44,14 +44,14 @@ if (user)
 
 if (user)
 {
- if (auth.authenticate && user.role === "admin") return <Redirect to="/Dashboard/Dashboardpublication" />
+ if (auth.authenticate && user.role === "admin") return <Redirect to="/DashboardInterface" />
 }
 
 if (user)
 {
- if (auth.authenticate && user.role === "expert") return <Redirect to="/DashboardExpert" />
+ if (auth.authenticate && user.role === "expert" && user.status==="confirmé") return <Redirect to="/DashboardExpert" />
 }
-{(auth.authenticate && user.role === "expert" && user.status==="confirmé") ? <Redirect to="/DashboardExpert"/> : (auth.authenticate && user.role === "user") ? <Redirect to="/ProfilUser"/>:  (auth.authenticate && user.role === "admin") ? <Redirect to="/Dashboard/Dashboardpublication"/> : <RegisterUserForm/> }
+// {(auth.authenticate && user.role === "expert" && user.status==="confirmé") ? <Redirect to="/DashboardExpert"/> : (auth.authenticate && user.role === "user") ? <Redirect to="/ProfilUser"/>:  (auth.authenticate && user.role === "admin") ? <Redirect to="/Dashboard/Dashboardpublication"/> : <RegisterUserForm/> }
 
 
     return (
