@@ -16,12 +16,7 @@ const SignIn = (props) => {
 
     const dispatch = useDispatch()
 
-    
-    // useEffect(() => {
-    //     if (!auth.authenticate ){  
-    //    dispatch(isUserLoggedIn());
-    //    } 
-    // },[])
+
     
     const userLogin =(e)=>{
     e.preventDefault()

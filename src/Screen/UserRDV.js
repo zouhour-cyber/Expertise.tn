@@ -38,7 +38,7 @@ const UserRDV = (props) => {
     <Col md={4} >
     <div className="bg-white ">   
 
-    <img src="image/temoignage1.webp" className="img-responsive my-4" style={{ borderRadius:"50%", height:"9rem", width:"9rem"}}/>
+    <img src={userDonnées.image} className="img-responsive my-4" style={{ borderRadius:"50%", height:"9rem", width:"9rem"}}/>
     <div>  <h4>  {userDonnées.fullName}</h4>  </div>
 
    

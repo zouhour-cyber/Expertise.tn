@@ -38,9 +38,7 @@ const Publications = () => {
      const getOnePUB=(id) =>{
        dispatch(getPublicationById(id))
      }
-
-
-      
+   
     return (
     
     <div className="mt-5">
@@ -60,7 +58,7 @@ const Publications = () => {
              <div  style={{marginLeft:"-1rem"}} className="mt-4"> <a href="#" class="icon-link  "><i class="fa fa-pencil-square-o"></i> Mohaned Hamza</a>
             <a class="icon-link " > <i class="far fa-clock"></i> 10/09/2021  </a>  </div> 
                <Card.Text >
-               <div className="description-text mt-2"> {el.description.slice(0,96)}  </div>
+               <div className="description-text mt-2"> {el.description.slice(0,96)}...  </div>
                   
                </Card.Text>
                <div className="d-flex justify-content-between"> 

@@ -69,6 +69,7 @@ const NavbarComponent = () => {
     </Nav>
 
     <Link  to="/DashboardExpert" className="ms-auto"> Profil {userDonnées.fullName}  <img src={userDonnées.image}  className="img-responsive ms-2" style={{ borderRadius:"50%", height:"2rem", width:"2rem"}}/> </Link>
+   
     <Link  className="btn btn-outline-success btn-sm me-4" onClick={logout}>   Déconnexion  </Link>
   {/* <a className="btn-success btn-sm" onClick={logout}>  <i class="fas fa-sign-out-alt fa-2x"  ></i> </a>  */}
   </Navbar.Collapse>

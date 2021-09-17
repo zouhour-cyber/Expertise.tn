@@ -43,9 +43,7 @@ function App() {
   <Switch>
         <Route exact path="/"  component={Home}>
        </Route>
-      <PrivetRoute  path="/DashboardInterface"   component={DashboardInterface}/>
-      <Route  path="/AdminNEWSLETTER"   component={AdminNEWSLETTER}/>
-      <Route  path="/DashboardValidationExpert"   component={DashboardValidationExpert}/>
+  
       <Route   path="/Actualités"   component={PublicationsScreen}/>
       <Route   path="/Expert"   component={ExpertScreen}/>
   
@@ -58,8 +56,10 @@ function App() {
     </Route> 
 
     <Route exact path="/signin" component={PageSignIn}>
-
       </Route>
+      <PrivetRoute  path="/DashboardInterface"   component={DashboardInterface}/>
+      <PrivetRoute  path="/AdminNEWSLETTER"   component={AdminNEWSLETTER}/>
+      <PrivetRoute  path="/DashboardValidationExpert"   component={DashboardValidationExpert}/>
     <PrivetRoute   path="/DashboardExpert"   component={DashboardExpert}/>
     <PrivetRoute   path="/RDVDashExpert"   component={RDVDashExpert}/>
     <PrivetRoute  path="/ProfilUser" component={ProfilUser}/> 

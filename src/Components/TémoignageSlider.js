@@ -7,12 +7,12 @@ const Témoignage = (props) => {
     <div>
 
 <Carousel >
-  <Carousel.Item   className=""    style={{minHeight: "450px"}}  >
+  <Carousel.Item   className=""    style={{minHeight: "408px"}}  >
   
     <Carousel.Caption className="">
       <Container fluid> 
       <Row className="d-flex justify-content-evenly"> 
-    <Col md={3} sm={12} className="card-tem "  >
+    <Col md={3} sm={12} xs={12} className="card-tem "  >
    <i className="fa fa-quote-left testimonial_fa mb-5" aria-hidden="true"></i>
       <p className="testimonial_para">Lorem Ipsum ist ein einfacher Demo-Text für die Print- und Schriftindustrie </p>
          <Row className="">
@@ -41,7 +41,7 @@ const Témoignage = (props) => {
            </Row>
      </Col>
 
-     <Col md={3} sm={12} className="card-tem bg-blue">
+     <Col md={3} sm={12}  xs={12} className="card-tem bg-blue">
    <i className="fa fa-quote-left testimonial_fa mb-5" aria-hidden="true"></i>
       <p className="testimonial_para">Lorem Ipsum ist ein einfacher Demo-Text für die Print- und Schriftindustrie </p>
          <Row className="">
@@ -61,12 +61,12 @@ const Témoignage = (props) => {
      </Container>
     </Carousel.Caption>
   </Carousel.Item>
-  <Carousel.Item   className=""    style={{minHeight: "450px"}}>
+  <Carousel.Item   className=""    style={{minHeight: "408px"}}>
   
   <Carousel.Caption className="">
     <Container fluid> 
     <Row className="d-flex justify-content-evenly"> 
-  <Col md={3} sm={12} className="card-tem bg-blue"  >
+  <Col md={3} sm={12}  xs={12} className="card-tem bg-blue"  >
  <i className="fa fa-quote-left testimonial_fa mb-5" aria-hidden="true"></i>
     <p className="testimonial_para">Lorem Ipsum ist ein einfacher Demo-Text für die Print- und Schriftindustrie </p>
        <Row className="">
@@ -80,7 +80,7 @@ const Témoignage = (props) => {
                   </Col>
          </Row>
    </Col>
-   <Col md={3} sm={12} className="card-tem bg-blue ">
+   <Col md={3} sm={12}  xs={12} className="card-tem bg-blue ">
  <i className="fa fa-quote-left testimonial_fa mb-5" aria-hidden="true"></i>
     <p className="testimonial_para">Lorem Ipsum ist ein einfacher Demo-Text für die Print- und Schriftindustrie </p>
        <Row className="">
@@ -95,7 +95,7 @@ const Témoignage = (props) => {
          </Row>
    </Col>
 
-   <Col md={3} sm={12} className="card-tem bg-blue">
+   <Col md={3} sm={12}  xs={12} className="card-tem bg-blue">
  <i className="fa fa-quote-left testimonial_fa mb-5" aria-hidden="true"></i>
     <p className="testimonial_para">Lorem Ipsum ist ein einfacher Demo-Text für die Print- und Schriftindustrie </p>
        <Row className="">
@@ -122,27 +122,27 @@ const Témoignage = (props) => {
 
 <Container className="border-top-blue d-flex align-items-center justify-content-center"  fluid >
 <Row className="  mx-5"> 
-    <Col sm={3}> 
+    <Col sm={3} className="my-2"> 
     <div className="fun"> 
     <h1> 6000</h1>
      <h5> Happy Clients  </h5>
     </div>
     </Col>
-    <Col sm={3}> 
+    <Col sm={3} className="my-2"> 
     
-     <div className="fun1"> 
+     <div className="fun1 "> 
     <h1> 1000 </h1>
      <h5> Certified Experts </h5>
   
     </div>
     </Col>
-    <Col sm={3}> 
+    <Col sm={3} className="my-2"> 
     <div className="fun"> 
     <h1> 1000 </h1>
      <h5> Appointments </h5>
     </div>
     </Col>
-    <Col sm={3}> 
+    <Col sm={3} className="my-2"> 
     <div className="fun"> 
     <h1> 500 </h1>
      <h5> Active Clients  </h5>
