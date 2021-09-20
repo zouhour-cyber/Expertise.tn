@@ -136,9 +136,6 @@ const ExpertScreen = () => {
         <Link to="/Expertprofil"> <a style={{fontWeight:"600"}} onClick={() => getOneEXPERT(el._id)}> Prendre un rendez-vous  <i class="far fa-calendar-plus fa-2x"></i></a> </Link>
         </>
   
-
-
- 
     
     </div>
   </div>

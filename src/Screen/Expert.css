@@ -7,7 +7,24 @@
     --blue: #092c3f;
     --color-text: #57667e;
     --text:#bcc1c9;
+    --toastify-color-success: #32c788;
+
+    /* --toastify-color-light: #fff;
+    --toastify-color-progress-success: var(--toastify-color-success); */
+
+    
+
 }  
+
+.Toastify__toast-theme--colored.Toastify__toast--success  {
+    background-color: #32c788;
+}
+
+/* .Toastify__toast-body {
+
+    background-color: #fff;
+
+} */
 
 
 .bannerexpert{

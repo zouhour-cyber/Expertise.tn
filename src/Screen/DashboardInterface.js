@@ -60,14 +60,12 @@ useEffect(() => {
 <Row className="StatDash  d-flex justify-content-center ">
     
 <Col  md={5} sm={8} xs={9}>
-<Card style={{backgroundColor:"#3b76ef" , color:"white",   }} >
+<Card style={{backgroundColor:"#3b76ef" , color:"white"  }} >
   <Card.Body className=" d-flex justify-content-between align-items-center" >
   <div>  <i class="fas fa-users" style={{ fontSize: '1.6em',color:'white', padding:"1rem" ,border:"2px solid white", borderRadius:"50%"}}  />  </div>
 
-       <div style={{ fontSize: '19px'}}> <> {userData.length}  Utilisateurs</> </div> 
-      
-      
-      </Card.Body>
+  <div style={{fontSize: '19px'}}> <> {userData.length}  Utilisateurs</> </div> 
+   </Card.Body>
      
 </Card>
 </Col>

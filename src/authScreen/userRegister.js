@@ -15,6 +15,9 @@ const RegisterUserForm = (props) => {
     const [image,setImage]= useState('')
     const [role,setRole]= useState('')
     const [password, setPassword] = useState('')
+    const [Adresse, setAdresse] = useState('')
+
+   
    const [error, setError] = useState('')
 
    const auth = useSelector((state) => state.auth);
@@ -32,6 +35,7 @@ const RegisterUserForm = (props) => {
         setRole("");
         setPassword("");
         setError("");
+        setAdresse("");
       }
     }, [user.loading]);
   
@@ -40,7 +44,7 @@ const RegisterUserForm = (props) => {
    
     const user = {
         fullName
-        ,phone,email,Spécialité,Description,image,password,role
+        ,phone,email,Spécialité,Description,image,password,role,Adresse
       };
   
       dispatch(signup(user));
@@ -53,6 +57,21 @@ if(auth.authenticate){
  if (user.loading) {
    return <p>Loading...!</p>
  }
+
+
+  //  //notification RDV
+  //  const notify = () => toast("Inscription avec succés, Veuillez attender la confirmation!", {
+  //   position: "top-right",
+  //   autoClose: 6000,
+  //   hideProgressBar: false,
+  //   closeOnClick: true,
+  //   pauseOnHover: true,
+  //   draggable: true,
+  //   progress: undefined,
+  //   icon: ({theme, type}) =>  <img src="./image/success.png"/>
+
+  
+  //   });
 
 
    return (
@@ -98,10 +117,12 @@ if(auth.authenticate){
                        
                        <Input  placeholder="Insérez votre image ici.." type="text" onChange={(e)=>{setImage(e.target.value)}}/>
                      </>
-              
+                     <Input  placeholder="Ecrivez votre mot de passe ici.."  type="password" onChange={(e)=>{setPassword(e.target.value)}} />
+
+                     <Input  placeholder="Insérez votre adresse ici.." type="text" onChange={(e)=>{setAdresse(e.target.value)}}/>
+
                            <>
                           
-                     <Input  placeholder="Ecrivez votre mot de passe ici.."  type="password" onChange={(e)=>{setPassword(e.target.value)}} />
                            </>
                            <div className="d-flex justify-content-center">
                               <Button  className="mt-4" style={{width:"100%", backgroundColor:"var(--blue)", color:"white"}} type="submit"  >S'inscrire</Button>

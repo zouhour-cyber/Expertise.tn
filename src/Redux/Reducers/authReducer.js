@@ -4,7 +4,7 @@ const inisialState ={
     token:null,
     user:{
         fullName:''
-        ,phone:'',email:'',Spécialité:'',Description:'',image:'',status:'',role:''
+        ,phone:'',email:'',Spécialité:'',Description:'',image:'',status:'',role:'',Adress:''
        
     },
     authenticate :false,

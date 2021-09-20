@@ -57,7 +57,7 @@ if (user)
                         <Form onSubmit={userLogin}>
                            
                             <Input placeholder="Email" type="email" onChange={(e)=>{setEmail(e.target.value)}} />
-                            <Input  placeholder="Password"  type="password" onChange={(e)=>{setPassword(e.target.value)}} />
+                            <Input  placeholder="Password"  type="password" onChange={(e)=>{setPassword(e.target.value)}} required/>
                              <Button  style={{width:"100%", backgroundColor:"var(--blue)", color:"white"}} type="submit" className="mt-4">se connecter</Button>
                           
                         </Form>

@@ -14,7 +14,7 @@ const DashboardExpert = (props) => {
  
     // update's state //
     const [update, setUpdate] = useState(
-  {id, fullName:userDonnées.fullName,phone:userDonnées.phone,email:userDonnées.email,image:userDonnées.image, status:userDonnées.status, password:userDonnées.password} )
+  {id, fullName:userDonnées.fullName,phone:userDonnées.phone,email:userDonnées.email,image:userDonnées.image, status:userDonnées.status, password:userDonnées.password, Adresse:userDonnées.Adresse} )
     //Handle Change//
     const hanleChange = (e) => {
         const {name, value} = e.target
@@ -25,7 +25,7 @@ const DashboardExpert = (props) => {
     //UPDATE PLAT //
     const updateUser= (id) => {
      
-      dispatch(updateUSER(id, update.fullName,update.phone, update.email,update.image,update.status,update.password ))
+      dispatch(updateUSER(id, update.fullName,update.phone, update.email,update.image,update.status,update.password,update.Adresse))
       console.log("updaaaate User", update)
     }
 
@@ -53,6 +53,8 @@ const DashboardExpert = (props) => {
     <p> Adresse e-mail  {userDonnées.email}</p>
 
     <p> tel: (+216) {userDonnées.phone}</p>
+    <p> Adresse: {userDonnées.Adresse}</p>
+
   </div>  
      <hr/>
   
@@ -94,6 +96,9 @@ const DashboardExpert = (props) => {
 <Form.Control type="email" placeholder="Enter votre e-mail"  name='email'   defaultValue={userDonnées.email} onChange={hanleChange}  />
 </Form.Group>
 
+<Form.Group className="my-2">
+<Form.Control type="text" placeholder="Enter votre Adresse"  name='Adresse'   defaultValue={userDonnées.Adresse} onChange={hanleChange}  />
+</Form.Group>
 
 <Button className="btn-block mt-4" onClick={() => updateUser(userDonnées._id)} > Valider les modifications</Button>
 

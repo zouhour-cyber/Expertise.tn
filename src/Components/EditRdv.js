@@ -25,7 +25,7 @@ import {useDispatch} from 'react-redux'
 
     //UPDATE RDV //
     const updaterdv= () => {
-      dispatch(updateRDV(id, update.date,update.heure,update.statusRDV ))
+      dispatch(updateRDV(id, update.date,update.heure,update.statusRDV,update.AdresseRDV ))
       console.log("updaaaate", update)
       setShow(false)
     }
@@ -52,11 +52,21 @@ import {useDispatch} from 'react-redux'
 <Form.Control type="time" placeholder="enter heure"  name='heure'  defaultValue={el.heure}  onChange={hanleChange}  />
 </Form.Group>
 
-
 <Form.Group controlId="formBasicPassword">
+<Form.Label> <h6>Adresse </h6></Form.Label>
+<Form.Control type="text" placeholder="enter AdresseRDV"  name='AdresseRDV' defaultValue={el.AdresseRDV} onChange={hanleChange}   />
+</Form.Group>
+
+{/* <Form.Group controlId="formBasicPassword">
 <Form.Label> <h6>Status </h6></Form.Label>
 <Form.Control type="text" placeholder="enter statusRDV"  name='statusRDV' defaultValue={el.statusRDV} onChange={hanleChange}   />
-</Form.Group>
+</Form.Group> */}
+
+<Form.Select  aria-label="Default select example " className="mt-4"  name='statusRDV' defaultValue={el.statusRDV} onChange={hanleChange} >
+                            <option> en attente</option>
+                            <option >confirmé</option>
+                            <option >annuler</option>
+</Form.Select>
 
 
 <Button className="btn-block mt-4" onClick={updaterdv}> Valider les modifications</Button>

@@ -7,6 +7,11 @@ import '../Components/Footer.css';
 import { addRDVApi } from '../Redux/Actions/RDVactions';
 import { getUserbyId } from '../Redux/Actions/authAction';
 import { Redirect } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import './Expert.css'
+
+
 const ExpertProfil = (id) => {
   const dispatch = useDispatch()
   // const AfficheExpert = useSelector((state) => state.NosEXPERTS.NosexpertsData);
@@ -22,7 +27,7 @@ const ExpertProfil = (id) => {
    console.log(userData._id + userData.fullName, "get expert by ID???");
 
    //handle date input
-   const [input,setInput]=useState({date:"",heure:"", idExpert:"",nameExpert:"",nameUser:`${userDonnées.fullName}`, idUser:`${userDonnées._id}`})
+   const [input,setInput]=useState({date:"",heure:"", idExpert:"",nameExpert:"",nameUser:`${userDonnées.fullName}`, idUser:`${userDonnées._id}`,statusRDV:"en attente",AdresseRDV:`${userDonnées.Adresse}`})
 
 const hanleChange=(e)=>{
     const {name,value}=e.target
@@ -34,13 +39,30 @@ const hanleChange=(e)=>{
 }
    //ADD RDV
 const addNewRDV=()=>{
-  dispatch (addRDVApi(input.date,input.heure,userData._id,userData.fullName,input.nameUser,input.idUser )) 
+  dispatch (addRDVApi(input.date,input.heure,userData._id,userData.fullName,input.nameUser,input.idUser,input.statusRDV,input.AdresseRDV)) 
   console.log("inpuuuuuuuuuuuut RDV",input)
   }
   
-  if(!auth.authenticate){
-    return <Redirect to={`/signin`} />
-  }
+
+
+  //notification RDV
+  const notify = () => toast("Demande de rendez-vous avec succés", {
+    position: "top-right",
+    autoClose: 6000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    icon: ({theme, type}) =>  <img src="./image/success.png"/>
+
+  
+    });
+
+
+    if(!auth.authenticate){
+      return  <Redirect to={`/signin`} />
+    }
 
   return(
     <div>
@@ -67,6 +89,8 @@ const addNewRDV=()=>{
               <div> <span style={{fontWeight:"600"}}> Adresse e-mail: </span> {userData.email} </div>
               <div> <span style={{fontWeight:"600"}}> Numéro de téléphone: </span>{userData.phone} </div>
               <div><span style={{fontWeight:"600"}}> Expérience:</span> {userData.Description} </div>
+              <div><span style={{fontWeight:"600"}}> Adresse:</span> {userData.Adresse} </div>
+
               </>
           
               </div> 
@@ -94,9 +118,31 @@ const addNewRDV=()=>{
             <Form.Label  className="my-3" >  <div> Choisissez l'heure </div>  </Form.Label>
 
             <Form.Control className="mt-2" type="time" name="heure" onChange={hanleChange}  />
-     
-            <Button variant="dark" size="block" className="mt-5 w-100 bg-blue"  onClick={addNewRDV} > Réserver maintenant </Button>
+            <Form.Label  className="my-3" >  <div> Choisissez l'adresse </div>  </Form.Label>
+
+             <Form.Control className="mt-2" type="text" defaultValue={userDonnées.Adresse} name="AdresseRDV" onChange={hanleChange}  />
+
            
+     
+            <Button variant="dark"  size="block" className="mt-4 w-100 bg-blue"  onClick={() => {addNewRDV(); notify()}} >  Réserver maintenant </Button>
+            <ToastContainer
+position="top-right"
+theme="light"
+autoClose={5000}
+hideProgressBar={false}
+newestOnTop={false}
+closeOnClick
+rtl={false}
+pauseOnFocusLoss
+draggable
+pauseOnHover
+type="light"
+icon={true}
+
+/>
+{/* Same as */}
+<ToastContainer />
+
             </div>
             </Form>
 

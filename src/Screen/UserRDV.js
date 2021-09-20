@@ -50,6 +50,8 @@ const UserRDV = (props) => {
     <p> Adresse e-mail: {userDonnées.email}</p>
 
     <p> Téléphone: {userDonnées.phone}</p>
+    <p> Adresse: {userDonnées.Adresse}</p>
+
     {/* <p> Téléphone: {userDonnées._id}</p> */}
 
      </div>  
@@ -73,6 +75,7 @@ const UserRDV = (props) => {
                <th> Heure </th>
                <th> Status </th>
                <th> Expert </th>
+               <th>Adresse</th>
                <th> Action </th> 
 
 
@@ -87,6 +90,7 @@ const UserRDV = (props) => {
  <td> {el.heure} </td>
  <td> {el.statusRDV} </td>
   <td> {el.nameExpert}</td>
+  <td> {el.AdresseRDV} </td>
  <td>  <Button variant="dark"  className="btn-sm"  onClick={() => deleterdv(el._id)} 
  ><i  class="fa fa-times"></i></Button>  
  <EditRdv el={el}  id={el._id} /> </td>

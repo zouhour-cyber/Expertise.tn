@@ -20,9 +20,9 @@ export const  getRDV= () => async (dispatch) =>  {
 
 
 //ADD RDV
-export const addRDVApi=(date,heure,idExpert,nameExpert,nameUser,idUser,statusRDV)=> async (dispatch) =>{
+export const addRDVApi=(date,heure,idExpert,nameExpert,nameUser,idUser,statusRDV,AdresseRDV)=> async (dispatch) =>{
     try{
-        const res=await axios.post("http://localhost:4000/app/rdv/addRDV", {date,heure,idExpert,nameExpert,nameUser,idUser,statusRDV });
+        const res=await axios.post("http://localhost:4000/app/rdv/addRDV", {date,heure,idExpert,nameExpert,nameUser,idUser,statusRDV,AdresseRDV });
         dispatch ({
             type:"ADD_RDV_SUCCEDED",
             payload:res.data
@@ -52,9 +52,9 @@ export const deleteRDV = (id)=> async (dispatch) => {
   }
 
   //UPDATE RDV
-   export const updateRDV =(id,date,heure,statusRDV)  => async dispatch =>{
+   export const updateRDV =(id,date,heure,statusRDV,AdresseRDV)  => async dispatch =>{
        try{
-        const res = await axios.put(`http://localhost:4000/app/rdv/updateRDV/${id}`, {date,heure,statusRDV}).then(res=>res.data).then(res=> window.location.reload())
+        const res = await axios.put(`http://localhost:4000/app/rdv/updateRDV/${id}`, {date,heure,statusRDV,AdresseRDV}).then(res=>res.data).then(res=> window.location.reload())
            dispatch({
             type:"UPDATE_RDV_SUCEDED",
             payload: res.data

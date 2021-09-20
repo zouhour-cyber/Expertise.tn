@@ -19,7 +19,7 @@ const ProfilUser = () => {
  
     // update's state //
     const [update, setUpdate] = useState(
-  {id, fullName:userDonnées.fullName , phone:userDonnées.phone, email:userDonnées.email,image:userDonnées.image, password:userDonnées.password} )
+  {id, fullName:userDonnées.fullName , phone:userDonnées.phone, email:userDonnées.email,image:userDonnées.image, password:userDonnées.password, Adresse:userDonnées.Adresse } )
     //Handle Change//
     const hanleChange = (e) => {
         const {name, value} = e.target
@@ -30,7 +30,7 @@ const ProfilUser = () => {
     //UPDATE PLAT //
     const updateUser= (id) => {
      
-      dispatch(updateUSER(id, update.fullName , update.phone, update.email,update.image, update.password ))
+      dispatch(updateUSER(id, update.fullName , update.phone, update.email,update.image, update.password, update.Adresse))
       console.log("updaaaate User", update)
     }
     //get mes Rendez-vous
@@ -66,6 +66,8 @@ const ProfilUser = () => {
     <p> Adresse e-mail: {userDonnées.email}</p>
 
     <p> Téléphone: {userDonnées.phone}</p>
+    <p> Adresse: {userDonnées.Adresse}</p>
+
 
      </div>  
      <hr className=""/>
@@ -103,6 +105,9 @@ const ProfilUser = () => {
 <Form.Control type="email" placeholder="Entrer votre adresse e-mail"  name='email' defaultValue={userDonnées.email} onChange={hanleChange}    />
 </Form.Group>
 
+<Form.Group className="my-2">
+<Form.Control type="text" placeholder="Entrer votre adresse"  name='Adresse' defaultValue={userDonnées.Adresse} onChange={hanleChange}    />
+</Form.Group>
 
 <Button className="btn-block mt-5" onClick={() => updateUser(userDonnées._id)} > Valider les modifications</Button>
 

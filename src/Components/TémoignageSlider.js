@@ -1,6 +1,8 @@
 import React from 'react'
-import {Carousel, Container, Row , Col, Button} from 'react-bootstrap'
+import {Carousel, Container, Row , Col} from 'react-bootstrap'
 import './témoignage.css'
+import CountUp from 'react-countup';
+
 
 const Témoignage = (props) => {
   return(
@@ -124,28 +126,29 @@ const Témoignage = (props) => {
 <Row className="  mx-5"> 
     <Col sm={3} className="my-2"> 
     <div className="fun"> 
-    <h1> 6000</h1>
-     <h5> Happy Clients  </h5>
+    <h1> <CountUp start={0} duration={100}  end={600}/>
+</h1>
+     <h5> Clients satisfaits  </h5>
     </div>
     </Col>
     <Col sm={3} className="my-2"> 
     
      <div className="fun1 "> 
-    <h1> 1000 </h1>
-     <h5> Certified Experts </h5>
+    <h1>  <CountUp start={0} duration={100}  end={1000}/> </h1>
+     <h5>  Experts certifiés </h5>
   
     </div>
     </Col>
     <Col sm={3} className="my-2"> 
     <div className="fun"> 
-    <h1> 1000 </h1>
-     <h5> Appointments </h5>
+    <h1><CountUp start={0} duration={100}  end={900}/> </h1>
+     <h5> Rendez-vous </h5>
     </div>
     </Col>
     <Col sm={3} className="my-2"> 
     <div className="fun"> 
-    <h1> 500 </h1>
-     <h5> Active Clients  </h5>
+    <h1> <CountUp start={0} duration={100}  end={500}/> </h1>
+     <h5> Clients actifs  </h5>
     </div>
     </Col>
 

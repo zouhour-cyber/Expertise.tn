@@ -1,9 +1,8 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { deleteRDV, getRDV } from '../Redux/Actions/RDVactions'
-import {Container,Row, Col, Table, Button , Card } from 'react-bootstrap';
+import {Container,Row, Col, Table, Button } from 'react-bootstrap';
 import { EditRdv } from './EditRdv';
-import Sidebar from  './Sidebar';
 import NavbarExpert from './NavbarExpert';
 
 const RDVDashExpert = (props) => {
@@ -36,7 +35,11 @@ const RDVDashExpert = (props) => {
                <th> Date</th> 
                <th> Heure </th>
                <th> Client </th> 
+               <th>Adresse</th>
+
                <th> Status </th> 
+
+               
                <th> Action </th> 
 
             </tr>
@@ -48,7 +51,8 @@ const RDVDashExpert = (props) => {
             <td> {el.date} </td>
             <td> {el.heure} </td>
              <td> {el.nameUser}</td>
-            <td> {el.statusRDV} </td>
+             <td> {el.AdresseRDV} </td>
+             <td> {el.statusRDV} </td>
          
  <td>  <Button variant="dark"  className="mr-1 btn-sm"  onClick={() => deleterdv(el._id)}
  ><i  class="fa fa-times"></i></Button>  

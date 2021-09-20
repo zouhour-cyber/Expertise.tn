@@ -73,9 +73,16 @@ const ModalEditUser = ({ el, id}) => {
 <Form.Control type="email" placeholder="Enter votre e-mail"  name='email'   defaultValue={el.email} onChange={hanleChange}  />
 </Form.Group>
 
-<Form.Group className="my-2">
+{/* <Form.Group className="my-2">
 <Form.Control type="text" placeholder="status"  name='status'   defaultValue={el.status} onChange={hanleChange}  />
-</Form.Group>
+</Form.Group> */}
+
+<Form.Select  aria-label="Default select example " className="my-2" name='status' defaultValue={el.status} onChange={hanleChange}>
+                            <option >en attente</option>
+                            <option >confirmé</option>
+                            <option >refusé</option>
+
+                          </Form.Select>
 <Button className="bg-blue mt-4 w-100 " onClick={() => updateUser(el._id)} > Valider les modifications</Button>
 
 </Form>

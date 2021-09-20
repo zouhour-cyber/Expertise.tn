@@ -126,9 +126,9 @@ export const getUSER= () => async (dispatch) =>  {
 
 
   //UPDATE USER
-  export const updateUSER =(id,fullName,phone,email,image,status,password)  => async dispatch =>{
+  export const updateUSER =(id,fullName,phone,email,image,status,password,Adresse)  => async dispatch =>{
     try{
-     const res = await axios.put(`http://localhost:4000/user/updateUser/${id}`, {fullName,phone,email,image,status,password}).then(res=>res.data).then(res=> window.location.reload())
+     const res = await axios.put(`http://localhost:4000/user/updateUser/${id}`, {fullName,phone,email,image,status,password,Adresse}).then(res=>res.data).then(res=> window.location.reload())
         dispatch({
          type:"UPDATE_USER_SUCEDED",
          payload: res.data

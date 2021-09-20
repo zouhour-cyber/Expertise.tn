@@ -55,7 +55,7 @@ const NavbarComponent = () => {
       <div> 
         <Navbar  className="nav" collapseOnSelect expand="lg" variant="dark"  fixed="top" >
   <Container fluid>
-  <Navbar.Brand href="/"> <span className="logoVert"> Find.</span>Expertise  </Navbar.Brand>
+  <Navbar.Brand href="/"> <span className="logoVert"> Find.</span>Expert  </Navbar.Brand>
   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
   <Navbar.Collapse id="responsive-navbar-nav">
     <Nav className="mx-auto">
