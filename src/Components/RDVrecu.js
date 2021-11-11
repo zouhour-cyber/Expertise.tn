@@ -48,7 +48,7 @@ const RDVrecu = (props) => {
 <tbody>
         {datasRDV.map((el,key ) => (
          <tr> 
-            <td> {el.date} </td>
+            <td> {new Date(el.date).toLocaleDateString()} </td>
             <td> {el.heure} </td>
             <td> {el.statusRDV} </td>
 

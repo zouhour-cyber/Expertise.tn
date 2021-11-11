@@ -36,10 +36,7 @@ const RDVDashExpert = (props) => {
                <th> Heure </th>
                <th> Client </th> 
                <th>Adresse</th>
-
-               <th> Status </th> 
-
-               
+               <th> Status </th>                
                <th> Action </th> 
 
             </tr>
@@ -48,7 +45,7 @@ const RDVDashExpert = (props) => {
 <tbody>
         {datasRDV.filter(el => el.idExpert === id).map((el,key ) => (
          <tr> 
-            <td> {el.date} </td>
+            <td> {new Date(el.date).toLocaleDateString()} </td>
             <td> {el.heure} </td>
              <td> {el.nameUser}</td>
              <td> {el.AdresseRDV} </td>

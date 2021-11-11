@@ -4,14 +4,15 @@ import { Container, Row, Col, Button , Card} from 'react-bootstrap'
 
 
 const CardsExpertise = (props) => {
+
   return(
     <div> 
     <div className="subtitle"> Nos Domaines d'espertise</div>
     <div  className="d-flex justify-content-evenly mt-5"> 
   <Row>
-  <Col md={4}  sm={10}  xs={10}> 
-  
-  <Card className="Cardhover" style={{ width: '21em' ,height:"27rem", padding:"0.5rem" }}>
+  <Col md={4}  sm={10}  xs={10}   > 
+
+  <Card className="Cardhover" style={{ width: '21em' ,height:"27rem", padding:"0.5rem" }}  >
     <Card.Body>
       <Card.Title><i className="fas fa-utensils fa-3x iconservice"></i> </Card.Title>
       <Card.Subtitle className="my-4 text-blue"> Agroalimentaire</Card.Subtitle>
@@ -52,10 +53,12 @@ const CardsExpertise = (props) => {
   </Col>
   
   </Row>
-  </div>
-  
 
+
+ </div>
+  
   </div>
+
    )
 
  }

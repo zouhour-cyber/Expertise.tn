@@ -86,7 +86,7 @@ const UserRDV = (props) => {
 {datasRDV.filter(el => el.idUser === id)
 .map(el => (
   <tr> 
- <td>  {el.date}</td>
+ <td>  {new Date(el.date).toLocaleDateString()}</td>
  <td> {el.heure} </td>
  <td> {el.statusRDV} </td>
   <td> {el.nameExpert}</td>

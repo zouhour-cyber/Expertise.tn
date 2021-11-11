@@ -10,6 +10,7 @@ import { Redirect } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './Expert.css'
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const ExpertProfil = (id) => {
@@ -46,18 +47,7 @@ const addNewRDV=()=>{
 
 
   //notification RDV
-  const notify = () => toast("Demande de rendez-vous avec succés", {
-    position: "top-right",
-    autoClose: 6000,
-    hideProgressBar: false,
-    closeOnClick: true,
-    pauseOnHover: true,
-    draggable: true,
-    progress: undefined,
-    icon: ({theme, type}) =>  <img src="./image/success.png"/>
-
-  
-    });
+  const notify = () => toast.success("Demande de rendez-vous avec succés");
 
 
     if(!auth.authenticate){

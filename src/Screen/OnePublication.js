@@ -16,13 +16,13 @@ const OnePublication = (props) => {
         }, [])
      console.log(datas, "une publication???");
 
-  const recent=[ 
-    {id:"1", image:"./image/miel.jpg", description:"la traçabilité du miel trade à voir le jour...",  date:"10/09/2021" },
-    {id:"2", image:"./image/farm.jpg", description:"Augmenter le taux de MO dans le sol, un défis",date:"09/09/2021"},
-    {id:"3", image:"./image/about2.jpg", description:"Candidature pour recruter des ingénieurs agro",date:"08/09/2021"},
-    {id:"4", image:"./image/veterinaire.jpg", description:"Recrutement de vétérinaire",date:"07/09/2021"},
-  ]
-    
+     const recent=[ 
+      {id:"1", image:"http://www.agriculture.tn/wp-content/uploads/2021/10/IMG_0947-1068x712.jpg", description:"افتتاح موسم وتحويل الزيتون 2021 – 2022 بولاية صفاقس",  date:"31/10/2021" },
+      {id:"2", image:"https://cdn2.webmanagercenter.com/wmc/wp-content/uploads/2021/10/siamap-2021-kram.jpg", description:" SIAMAP 2021, du 26 au 31 octobre",date:"24/10/2021"},
+      {id:"3", image:"http://www.agriculture.tn/wp-content/uploads/2021/10/%D8%AA%D9%84%D9%82%D9%8A%D8%AD.png", description:"بلاغ حول انطلاق الحملة الوطنية المجانية لتلقيح الحيوانات ضد داء الكلب",date:"29/10/2021"},
+      {id:"4", image:"./image/veterinaire.jpg", description:"Recrutement de vétérinaire",date:"07/09/2021"},
+    ]
+   
   return(
     <div>
       <NavbarComponent/>

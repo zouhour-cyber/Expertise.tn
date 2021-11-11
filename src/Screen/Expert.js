@@ -54,18 +54,18 @@ const ExpertScreen = () => {
         onChange={handelChange}
       />
 
-      <select className="btn-select" aria-label="Default select example"  onChange={handelChange}
+      <select className="btn-select" onChange={handelChange}
   >
   <option > Spécialité</option>
-  <option value="1">Céréaliculture </option>
-  <option value="2">Oléiculture</option>
-  <option value="3">Arboriculture</option>
-  <option value="4">Horticulture</option>
-  <option value="5">Floriculture</option>
-  <option value="6">Viticulture</option>
-  <option value="7">Agro-alimentaire</option>
-  <option value="8">Vétérinaire</option>
-  <option value="9">Production animale</option>
+  <option>Céréaliculture </option>
+  <option >Oléiculture</option>
+  <option >Arboriculture</option>
+  <option >Horticulture</option>
+  <option >Floriculture</option>
+  <option >Viticulture</option>
+  <option >Agro-alimentaire</option>
+  <option>Vétérinaire</option>
+  <option>Production animale</option>
 </select>
   
 </Form>        
@@ -86,13 +86,13 @@ const ExpertScreen = () => {
   .filter((el) => {
 
     if (
-      (el.role === "expert" && search === "") ||
-      (el.role === "expert" && el.Spécialité.toLowerCase().includes(search.toLowerCase()))
-    ) {
-      if(el.role === "expert" && el.status==="confirmé"){
+      (el.role === "expert" && el.status==="confirmé" && search === "") ||
+      (el.role === "expert" && el.status==="confirmé"  && (el.Spécialité.toLowerCase().includes(search.toLowerCase()) ||el.fullName.toLowerCase().includes(search.toLowerCase())))
+    ) 
+     {
         return el;
       }
-    }
+    
   })
 .map((el) => ( 
   <Col md={4} sm={5} xs={12} className=""> 

@@ -103,7 +103,7 @@ setShow(false)
    <tr>
      <td style={{width:"180px"}}> <img src={el.image} style={{ width: '10rem'}} className="imagetable"/> </td>
      <td style={{width:"100px"}}> <p> {el.titre}</p> </td>
-     <td style={{width:"400px"}}> <p> {el.description} </p></td>
+     <td style={{width:"400px"}}> <p> {el.description.slice(0,170)} </p></td>
 
      <td><Button variant="dark"  className="me-2 btn-sm"  onClick={() => deleteItemm(el._id)}
  ><i  class="fa fa-times"></i></Button> 

@@ -273,10 +273,14 @@ color: var(--blue);
   border-top-right-radius: 1.3rem;
 
 }
-.bg-white{
-  background-color: #f7f7f7;
+.bg-white1{
+  background-color:rgba(248, 247, 247, 0.5)!important;
   padding:4rem 0rem;
   /* clip-path: polygon(0 10%, 100% 0%, 100% 89%, 0 100%); */
+
+}
+.bg-white{
+  padding:4rem 0rem;
 
 }
 

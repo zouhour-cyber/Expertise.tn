@@ -34,10 +34,10 @@ const ModalEditUser = ({ el, id}) => {
   return(
     <div>
  <><i class="far fa-edit"  onClick={handleShowUpdated}></i></>
-        <Modal show={show} onHide={handleClose}  size=""
+        <Modal show={show} onHide={handleClose} 
 >
-            <Modal.Header closeButton className="bgvert">
-            <Modal.Title> <h2> Find.Expert </h2> </Modal.Title>
+            <Modal.Header closeButton style={{backgroundColor:'var(--vert)'}} >
+            <Modal.Title > <h4> Find.Expert </h4> </Modal.Title>
             </Modal.Header>
 
             <Modal.Body >

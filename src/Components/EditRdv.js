@@ -34,8 +34,8 @@ import {useDispatch} from 'react-redux'
       <>
     <Button  className="btn-sm btn-edit ms-1"  onClick={handleShowUpdated}><i class="far fa-edit"></i></Button>
         <Modal show={show} onHide={handleClose}>
-            <Modal.Header closeButton className="bgdark">
-            <Modal.Title> <h2> FIND.EXPERT </h2> </Modal.Title>
+            <Modal.Header closeButton className="bg-vert2">
+            <Modal.Title> <h5> Confirmation du rendez-vous </h5> </Modal.Title>
             </Modal.Header>
 
             <Modal.Body className="bgdark">
@@ -43,17 +43,14 @@ import {useDispatch} from 'react-redux'
                 <Col  md={10} className="mx-auto my-4" > 
            
                 <Form >
-<Form.Group controlId="formBasicEmail">
-<Form.Label> <h6> Date du rendez-vous  </h6></Form.Label>
+<Form.Group controlId="formBasicEmail" className="mt-3">
 <Form.Control type="date" placeholder="date" name='date' defaultValue={el.date} onChange={hanleChange} />
 
-</Form.Group><Form.Group controlId="formBasicPassword">
-<Form.Label> <h6> heure </h6></Form.Label>
+</Form.Group><Form.Group controlId="formBasicPassword" className="mt-3">
 <Form.Control type="time" placeholder="enter heure"  name='heure'  defaultValue={el.heure}  onChange={hanleChange}  />
 </Form.Group>
 
-<Form.Group controlId="formBasicPassword">
-<Form.Label> <h6>Adresse </h6></Form.Label>
+<Form.Group controlId="formBasicPassword" className="mt-3">
 <Form.Control type="text" placeholder="enter AdresseRDV"  name='AdresseRDV' defaultValue={el.AdresseRDV} onChange={hanleChange}   />
 </Form.Group>
 
@@ -69,7 +66,7 @@ import {useDispatch} from 'react-redux'
 </Form.Select>
 
 
-<Button className="btn-block mt-4" onClick={updaterdv}> Valider les modifications</Button>
+<Button className="btn-block w-100 bg-blue mt-4" onClick={updaterdv}> Valider les modifications</Button>
 
 </Form>
 

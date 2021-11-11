@@ -11,11 +11,11 @@ const PageSignIn = (props) => {
     <div   >
         <NavbarComponent/>
         
-<Container  className="text center "fluid  > 
+<Container  className=" "fluid  > 
     <Row  className="bg-register d-flex justify-content-center" > 
   
   
-    <Col md={6}  sm={10} xs={10} className="bg-white" style={{margin:"9rem 0" , borderRadius:"2rem"}}> 
+    <Col md={5}  sm={10} xs={10} className="bg-white1" style={{margin:"9rem 0" , borderRadius:"2rem"}}> 
 
         <h3 className="mb-3 text-center"> se connecter </h3>
  <SignIn/>

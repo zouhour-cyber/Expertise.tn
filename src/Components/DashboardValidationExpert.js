@@ -35,7 +35,7 @@ const handelChange=(e)=>{
   return(
     <div>
       <NavbarAdmin/>
- <Container clasName="mt-5"> 
+ <Container className="mt-5"> 
 
      <Row className="d-flex justify-content-center"> 
   
@@ -62,7 +62,7 @@ const handelChange=(e)=>{
 
      <>
        
-      <Table responsive="sm" responsive="xs" striped hover >
+<Table responsive="sm" responsive="xs" striped hover >
 <thead >
    <tr>
 
@@ -90,7 +90,7 @@ if (
 })
   
   .map(el => (
-   <tr> 
+<tr> 
     
 <td style={{width:"50px"}}> <img src={el.image} style={{ width:"2rem" , height:"2rem" , borderRadius:"50%"}} /> <br/> {el.fullName} </td>
 <td  style={{width:"100px"}}>{el.email}  </td>
@@ -98,8 +98,7 @@ if (
 <td style={{width:"5px"}}> {el.role}</td>
 <td style={{width:"5px"}}> {el.status} </td>
 <td style={{width:"100px"}}><i class="fas fa-user-minus"   onClick={() => deleteUser(el._id)} ></i>   <ModalEditUser  el={el}  id={el._id}/> </td>
-
-   </tr>
+</tr>
   ))}
   </tbody>
  </Table>

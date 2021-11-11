@@ -54,8 +54,9 @@
 
 
     .title{
-        font-family: 'cursive';  
         color:var(--blue);
+        font-size: 15px;
+        font-family: "Poppins", Helvetica, sans-serif;
     }
     /* .date{
         background-color: var(--vert);
@@ -90,16 +91,18 @@
     .btn1 {
       background: white;
       color: #363738;
-      font-weight: bold;
+      /* font-weight: bold; */
       outline: none;
-      box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.2);
+      /* box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.2); */
       overflow: hidden;
       border-radius: 0;
-      height: 50px;
-      line-height: 50px;
+      height: 30px;
+       line-height: 30px;
+
       display: inline-block;
       padding: 0;
       border: none;
+      border-radius: 3px;
     }
     .btn1:focus {
       box-shadow: none;
@@ -107,24 +110,36 @@
     .btn1:hover {
       background: var(--vert);
       color: #fff;
+       box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.2); 
+
     }
-    .btn1.btn--with-icon {
+    /* .btn1.btn--with-icon {
       padding-right: 20px;
-    }
+    } */
     .btn1.btn--with-icon i {
-      padding: 0px 30px 0px 15px;
+      padding: 0px 12px 0px 15px;
       margin-right: 10px;
-      height: 50px;
-      line-height: 50px;
+      height: 30px;
+      line-height: 30px;
       vertical-align: bottom;
-      color: white;
-      background: var(--vert);
+      color:  var(--vert);
+      background: white;
       clip-path: polygon(0 0, 70% 0, 100% 100%, 0% 100%);
     }
     .btn1.btn--only-icon {
-      width: 50px;
+      width: 5px;
     }
 
     .description-text{
-      font-size: 17px;
+      font-size: 14px;
+      font-family: "Poppins", Helvetica, sans-serif;
+      color: #555;
+    }
+
+    .cardimg{
+      overflow-x: hidden;
+      overflow-y: hidden;
+      box-sizing: border-box;
+      height:100%;
+
     }
